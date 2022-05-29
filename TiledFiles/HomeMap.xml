@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.8" tiledversion="1.8.2" orientation="orthogonal" renderorder="right-down" width="32" height="24" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="234">
+ <tileset firstgid="1" name="Tileset" tilewidth="16" tileheight="16" tilecount="480" columns="16">
+  <image source="../../../../../../ASSETS/AIV Final Project/TILESET/PixelPackTOPDOWN8BIT.png" width="256" height="480"/>
+ </tileset>
+ <layer id="2" name="BackgroundLayer" width="32" height="24">
+  <data encoding="csv">
+218,218,218,218,218,218,217,218,217,218,218,218,217,218,217,217,218,217,218,218,218,218,217,218,217,218,217,217,218,218,217,218,
+217,218,217,218,217,218,217,218,218,218,217,218,218,217,218,218,218,217,218,217,217,217,217,218,217,217,217,218,217,217,217,217,
+217,217,218,217,218,217,218,218,217,218,218,218,218,218,218,218,218,217,217,218,218,218,218,218,217,218,217,217,217,218,217,217,
+218,218,217,217,217,218,217,218,218,217,218,218,217,218,217,218,218,218,218,218,218,218,217,218,217,217,217,218,218,217,217,218,
+218,217,218,218,218,218,218,217,217,218,218,217,218,217,217,217,218,218,217,218,218,218,218,218,217,217,218,217,218,218,218,217,
+218,218,217,218,218,217,218,218,217,218,217,218,218,218,217,218,218,217,218,217,217,218,218,218,218,218,218,218,217,217,218,218,
+217,218,218,217,218,218,218,218,218,218,218,218,218,218,218,217,218,218,218,218,218,217,217,218,217,218,217,218,218,217,218,217,
+218,217,218,218,218,217,218,218,217,217,218,218,218,218,217,218,218,217,218,218,217,218,218,218,217,218,217,218,217,218,217,218,
+218,217,218,218,218,218,218,218,217,218,217,218,218,218,218,218,218,217,217,218,217,218,218,218,218,217,218,218,218,218,217,218,
+218,218,217,218,217,217,218,217,218,218,217,218,218,218,217,217,217,218,217,217,218,218,217,217,218,218,218,218,217,218,218,218,
+217,218,217,218,218,218,218,217,217,218,218,217,218,218,218,218,217,218,218,218,218,218,218,218,218,217,217,218,218,218,218,218,
+217,217,217,218,218,218,217,217,217,218,217,218,218,218,218,218,218,217,217,217,218,218,217,218,218,218,218,218,218,217,218,218,
+218,218,218,218,217,218,218,218,218,218,218,217,217,217,217,218,218,218,218,218,217,217,217,218,218,217,218,218,218,218,218,217,
+218,218,217,218,217,218,218,218,218,218,218,217,218,217,218,218,218,218,218,217,218,218,218,218,218,218,218,217,217,218,217,218,
+217,218,217,218,218,217,217,218,218,217,217,217,217,218,217,218,218,217,218,218,218,217,217,218,218,218,218,218,218,218,217,218,
+218,218,217,218,218,218,218,218,217,218,218,218,218,218,218,217,217,217,218,218,217,218,218,218,218,218,217,217,218,217,217,217,
+218,218,217,218,218,218,217,218,218,218,218,218,217,218,217,217,218,217,218,218,217,218,217,218,217,217,217,218,217,218,217,217,
+217,218,217,218,217,218,218,218,217,217,217,217,218,217,217,217,217,218,217,218,217,218,218,218,218,218,218,217,217,218,218,217,
+218,217,218,218,217,218,217,218,218,217,217,217,218,217,218,217,218,218,218,217,217,217,218,218,217,217,218,217,217,218,218,218,
+218,218,218,217,218,218,218,217,218,217,218,217,217,218,217,218,217,218,217,218,218,218,217,218,217,218,218,218,218,218,218,218,
+218,218,218,218,218,218,217,218,218,217,218,218,217,218,218,218,218,218,217,218,218,218,218,218,218,218,217,218,217,218,218,218,
+217,218,217,218,218,218,218,217,218,218,218,218,218,218,218,218,218,217,217,218,217,217,218,218,218,218,218,218,217,217,217,217,
+218,218,217,217,217,218,218,217,218,217,217,217,217,217,217,218,218,218,218,217,217,217,218,217,217,218,218,217,218,218,218,218,
+218,218,218,218,218,218,217,218,217,218,218,218,217,218,218,218,218,217,218,218,217,218,218,218,217,218,218,218,218,218,218,217
+</data>
+ </layer>
+ <layer id="1" name="MiddlegroundLayer" width="32" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,17,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,19,
+0,0,0,0,0,0,0,0,0,0,0,0,162,162,162,42,39,39,39,39,42,39,39,34,163,70,34,34,34,34,34,35,
+0,0,0,0,0,0,0,0,0,0,0,0,41,41,41,39,39,39,39,39,39,39,39,34,34,34,34,34,220,163,34,35,
+0,0,0,0,0,0,0,0,0,0,0,0,162,34,162,34,162,42,39,39,39,39,39,39,39,42,34,163,163,34,34,35,
+0,0,0,0,0,0,0,0,0,0,0,0,33,34,34,34,34,39,34,34,162,40,162,34,34,39,34,34,34,69,163,35,
+0,0,0,0,0,0,0,0,0,0,0,0,49,50,50,50,50,50,50,50,162,40,162,50,50,50,50,50,50,50,50,51,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,39,0,0,0,0,0,0,0,0,0,0,0,0,
+17,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,18,35,0,0,0,0,0,0,0,0,0,0,0,0,
+33,34,161,161,163,34,34,69,34,34,34,161,161,34,34,34,34,34,69,35,0,0,0,0,0,0,0,0,0,0,0,0,
+33,34,161,161,161,34,34,162,34,34,34,34,163,34,34,34,34,34,34,35,0,0,0,0,0,0,0,0,0,0,0,0,
+33,34,34,34,34,34,163,34,34,161,34,34,34,34,34,163,69,34,34,35,0,0,0,0,0,0,0,0,0,0,0,0,
+49,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,51,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer id="3" name="ForegroundLayer" width="32" height="24">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup id="4" name="ObjectsLayer">
+  <object id="2" name="Well" gid="220" x="96" y="64" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="3" name="Well" gid="220" x="48" y="32" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="4" name="Well" gid="220" x="272" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="5" name="Well" gid="220" x="288" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="6" name="Well" gid="220" x="304" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="7" name="NightTable" gid="198" x="128" y="32" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="8" name="NightTable" gid="214" x="128" y="48" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="9" name="Bench" gid="235" x="96" y="48" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="10" name="Bench" gid="229" x="16" y="64" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="11" name="Bench" gid="230" x="32" y="64" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="12" name="Box" gid="204" x="144" y="80" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="13" name="Box" gid="204" x="160" y="80" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="14" name="Box" gid="204" x="160" y="64" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="15" name="NightTable" gid="219" x="144" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="16" name="NightTable" gid="199" x="64" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="17" name="NightTable" gid="215" x="64" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="18" name="Bed" gid="202" x="80" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="19" name="Bed" gid="216" x="80" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="20" name="Tree" gid="10" x="16" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="21" name="Tree" gid="11" x="32" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="22" name="Tree" gid="26" x="16" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="23" name="Tree" gid="27" x="32" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="24" name="NightTable" gid="199" x="16" y="208" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="25" name="NightTable" gid="215" x="16" y="224" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="26" name="Bed" gid="200" x="16" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="27" name="Bed" gid="216" x="16" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="28" name="Bed" gid="216" x="160" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="29" name="Bed" gid="200" x="160" y="240" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="30" name="NightTable" gid="198" x="144" y="240" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="31" name="NightTable" gid="214" x="144" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="32" name="Box" gid="204" x="64" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="33" name="Box" gid="204" x="80" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="34" name="Box" gid="204" x="96" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="35" name="BlackRock" gid="101" x="208" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="36" name="BlackRock" gid="101" x="208" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="37" name="Tree" gid="10" x="208" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="38" name="Tree" gid="11" x="224" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="39" name="Tree" gid="26" x="208" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="40" name="Tree" gid="27" x="224" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="41" name="Tree" gid="27" x="352" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="42" name="Tree" gid="27" x="320" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="43" name="Tree" gid="26" x="336" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="44" name="Tree" gid="26" x="304" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="45" name="Tree" gid="10" x="304" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="46" name="Tree" gid="10" x="336" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="47" name="Tree" gid="11" x="320" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="48" name="Tree" gid="11" x="352" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="49" name="Tree" gid="11" x="480" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="50" name="Tree" gid="10" x="464" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="51" name="Tree" gid="10" x="464" y="336" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="52" name="Tree" gid="26" x="464" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="53" name="Tree" gid="26" x="464" y="352" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="54" name="Tree" gid="27" x="480" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="55" name="Tree" gid="27" x="480" y="352" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="56" name="Tree" gid="11" x="480" y="336" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="57" name="NightTable" gid="219" x="320" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="58" name="NightTable" gid="219" x="336" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="59" name="NightTable" gid="219" x="352" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="60" name="NightTable" gid="219" x="368" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="61" name="Bench" gid="232" x="368" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="62" name="Bench" gid="233" x="384" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="63" name="Bench" gid="234" x="400" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="64" name="RedRock" gid="102" x="480" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="65" name="RedRock" gid="102" x="464" y="224" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="66" name="Box" gid="204" x="368" y="320" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="67" name="Box" gid="204" x="352" y="320" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="68" name="Bench" gid="232" x="448" y="320" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="69" name="Bench" gid="233" x="464" y="320" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="70" name="Bench" gid="234" x="480" y="320" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="71" name="NightTable" gid="219" x="336" y="368" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="72" name="Door" gid="182" x="432" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="73" name="Wall" gid="185" x="416" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="74" name="Wall" gid="185" x="400" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="75" name="Wall" gid="185" x="384" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="76" name="Wall" gid="185" x="368" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="77" name="Wall" gid="185" x="352" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="78" name="Wall" gid="185" x="336" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="79" name="Wall" gid="184" x="320" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="80" name="Wall" gid="168" x="320" y="368" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="81" name="Wall" gid="168" x="320" y="352" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="82" name="Wall" gid="168" x="320" y="336" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="83" name="Wall" gid="168" x="320" y="320" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="84" name="Wall" gid="152" x="320" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="85" name="Wall" gid="153" x="336" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="86" name="Wall" gid="153" x="352" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="87" name="Wall" gid="153" x="368" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="88" name="Wall" gid="153" x="448" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="89" name="Wall" gid="153" x="464" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="90" name="Wall" gid="153" x="480" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="91" name="Wall" gid="154" x="496" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="92" name="Wall" gid="170" x="496" y="320" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="93" name="Wall" gid="170" x="496" y="336" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="94" name="Wall" gid="170" x="496" y="352" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="95" name="Wall" gid="170" x="496" y="368" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="96" name="Wall" gid="186" x="496" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="97" name="Wall" gid="185" x="480" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="98" name="Wall" gid="185" x="464" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="99" name="Wall" gid="185" x="448" y="384" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="100" name="Wall" gid="185" x="448" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="101" name="Wall" gid="185" x="464" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="102" name="Wall" gid="185" x="480" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="103" name="Wall" gid="186" x="496" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="104" name="Wall" gid="170" x="496" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="105" name="Wall" gid="170" x="496" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="106" name="Wall" gid="170" x="496" y="240" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="107" name="Wall" gid="170" x="496" y="208" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="108" name="Wall" gid="170" x="496" y="192" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="109" name="Wall" gid="170" x="496" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="110" name="Wall" gid="170" x="496" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="111" name="Wall" gid="170" x="496" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="112" name="Wall" gid="154" x="496" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="114" name="Fire" gid="196" x="496" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="115" name="Fire" gid="195" x="496" y="224" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="116" name="Wall" gid="153" x="480" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="117" name="Wall" gid="153" x="464" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="118" name="Fire" gid="178" x="448" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="119" name="Wall" gid="153" x="432" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="120" name="Stove" gid="203" x="416" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="121" name="Wall" gid="153" x="400" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="122" name="Wall" gid="153" x="384" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="123" name="Wall" gid="153" x="368" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="124" name="Wall" gid="153" x="352" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="125" name="Wall" gid="153" x="336" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="126" name="Wall" gid="153" x="320" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="127" name="Wall" gid="153" x="304" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="128" name="Stove" gid="203" x="288" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="129" name="Wall" gid="153" x="272" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="130" name="Fire" gid="178" x="256" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="131" name="Wall" gid="153" x="240" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="132" name="Wall" gid="153" x="224" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="133" name="Wall" gid="153" x="208" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="134" name="Wall" gid="152" x="192" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="135" name="Wall" gid="168" x="192" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="136" name="Wall" gid="168" x="192" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="137" name="Wall" gid="168" x="192" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="138" name="Wall" gid="168" x="192" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="139" name="Wall" gid="168" x="192" y="192" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="140" name="Wall" gid="168" x="192" y="240" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="141" name="Wall" gid="168" x="192" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="142" name="Wall" gid="168" x="192" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="143" name="Wall" gid="184" x="192" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="144" name="Wall" gid="185" x="208" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="145" name="Wall" gid="185" x="224" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="146" name="Fire" gid="210" x="240" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="147" name="Fire" gid="210" x="352" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="148" name="Wall" gid="185" x="256" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="149" name="Wall" gid="185" x="272" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="150" name="Wall" gid="185" x="288" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="151" name="Wall" gid="185" x="304" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="152" name="Wall" gid="185" x="320" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="153" name="Wall" gid="185" x="336" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="154" name="Wall" gid="185" x="368" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="155" name="Wall" gid="185" x="288" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="156" name="Wall" gid="185" x="272" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="157" name="Wall" gid="185" x="256" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="158" name="Wall" gid="185" x="240" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="159" name="Wall" gid="185" x="224" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="160" name="Wall" gid="185" x="208" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="161" name="Wall" gid="185" x="192" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="162" name="Wall" gid="185" x="176" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="163" name="Wall" gid="185" x="160" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="164" name="Wall" gid="185" x="144" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="165" name="Wall" gid="185" x="112" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="166" name="Wall" gid="185" x="128" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="167" name="Wall" gid="185" x="96" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="168" name="Wall" gid="185" x="80" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="169" name="Wall" gid="185" x="64" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="170" name="Wall" gid="185" x="48" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="171" name="Wall" gid="185" x="32" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="172" name="Wall" gid="185" x="16" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="173" name="Wall" gid="184" x="0" y="304" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="174" name="Wall" gid="168" x="0" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="175" name="Wall" gid="168" x="0" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="176" name="Wall" gid="168" x="0" y="240" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="177" name="Wall" gid="168" x="0" y="224" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="178" name="Wall" gid="168" x="0" y="208" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="179" name="Wall" gid="168" x="0" y="192" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="180" name="Wall" gid="168" x="0" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="181" name="Wall" gid="168" x="0" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="182" name="Wall" gid="168" x="0" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="183" name="Wall" gid="152" x="0" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="184" name="Wall" gid="153" x="16" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="185" name="Wall" gid="153" x="32" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="186" name="Wall" gid="153" x="48" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="187" name="Wall" gid="153" x="64" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="188" name="Wall" gid="153" x="80" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="189" name="Wall" gid="153" x="96" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="190" name="Wall" gid="153" x="144" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="191" name="Stove" gid="203" x="160" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="192" name="Wall" gid="154" x="176" y="128" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="193" name="Wall" gid="170" x="176" y="144" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="194" name="Wall" gid="170" x="176" y="176" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="195" name="Wall" gid="170" x="176" y="192" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="196" name="Fire" gid="194" x="176" y="160" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="197" name="Fire" gid="225" x="0" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="198" name="Fire" gid="225" x="0" y="32" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="199" name="Fire" gid="196" x="176" y="96" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="200" name="Wall" gid="185" x="160" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="201" name="Wall" gid="185" x="144" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="202" name="Wall" gid="186" x="176" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="203" name="Wall" gid="170" x="176" y="80" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="204" name="Wall" gid="170" x="176" y="64" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="205" name="Wall" gid="170" x="176" y="48" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="206" name="Wall" gid="170" x="176" y="32" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="207" name="Wall" gid="154" x="176" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="208" name="Wall" gid="153" x="160" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="209" name="Wall" gid="153" x="144" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="210" name="Wall" gid="153" x="128" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="211" name="Wall" gid="153" x="112" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="212" name="Wall" gid="153" x="96" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="213" name="Wall" gid="153" x="80" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="214" name="Wall" gid="153" x="64" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="215" name="Wall" gid="153" x="48" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="216" name="Wall" gid="153" x="32" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="217" name="Wall" gid="153" x="16" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="218" name="Wall" gid="152" x="0" y="16" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="219" name="Wall" gid="168" x="0" y="48" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="220" name="Wall" gid="168" x="0" y="64" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="221" name="Wall" gid="168" x="0" y="80" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="222" name="Wall" gid="168" x="0" y="96" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="223" name="Wall" gid="184" x="0" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="224" name="Wall" gid="185" x="16" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="225" name="Wall" gid="185" x="32" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="226" name="Wall" gid="185" x="48" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="227" name="Wall" gid="185" x="64" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="228" name="Wall" gid="185" x="80" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="229" name="Wall" gid="185" x="96" y="112" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="230" name="Wall" gid="170" x="176" y="240" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="231" name="Wall" gid="170" x="176" y="256" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="232" name="Wall" gid="170" x="176" y="272" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="233" name="Wall" gid="170" x="176" y="288" width="16" height="16">
+   <properties>
+    <property name="Solid" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
