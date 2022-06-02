@@ -36,7 +36,7 @@ namespace BillyPassepartout
 
         public void Update()
         {
-            GameObject.Position += Velocity * Game.DeltaTime;
+            GameObject.Position += Velocity;
         }
 
         public bool Collides(RigidBody other, ref Collision collisionInfo)
@@ -57,14 +57,6 @@ namespace BillyPassepartout
         public bool CollisionTypeMatches(RigidBodyType type)
         {
             return ((uint)type & collisionMask) != 0;
-        }
-
-        public void Destroy()
-        {
-            GameObject = null;
-            Collider = null;
-
-            PhysicsManager.RemoveItem(this);
         }
     }
 }

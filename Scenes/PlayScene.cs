@@ -11,8 +11,8 @@ namespace BillyPassepartout
 {
     class PlayScene : Scene
     {
-        private TmxMap map;
-        private Player player;
+        public TmxMap Map { get; private set; }
+        public Player Player { get; private set; }
 
         public override void Start()
         {
@@ -32,12 +32,15 @@ namespace BillyPassepartout
         public override void Input()
         {
             Quit();
-            player.Input();
+            Player.Input();
         }
 
         public override void Update()
         {
             UpdateManager.Update();
+            PhysicsManager.Update();
+
+            PhysicsManager.CheckCollisions();
         }
 
         public override void Draw()
@@ -58,12 +61,12 @@ namespace BillyPassepartout
 
         private void LoadMap()
         {
-            map = new TmxMap("Tiled/XML/HomeMap.xml");
+            Map = new TmxMap("Tiled/XML/HomeMap.xml");
         }
 
         private void LoadPlayer()
         {
-            player = new Player();
+            Player = new Player();
         }
     }
 }

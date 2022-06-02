@@ -38,7 +38,7 @@ namespace BillyPassepartout
 
         public DrawLayer Layer { get; protected set; }
 
-        public GameObject(string textureName, DrawLayer layer = DrawLayer.Playground, float w = 0, float h = 0)
+        public GameObject(string textureName, DrawLayer layer = DrawLayer.PLAYGROUND, float w = 0, float h = 0)
         {
             texture = GfxManager.GetTexture(textureName);
 
@@ -74,11 +74,6 @@ namespace BillyPassepartout
 
             UpdateManager.RemoveItem(this);
             DrawManager.RemoveItem(this);
-
-            if (RigidBody != null)
-            {
-                RigidBody.Destroy();
-            }
         }
     }
 }

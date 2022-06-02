@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BillyPassepartout
 {
-    enum DrawLayer { Background, Middleground, Playground, Foreground, GUI, Last}
+    enum DrawLayer { BACKGROUND, MIDDLEGROUND, PLAYGROUND, FOREGROUND, GUI, LAST}
 
     static class DrawManager
     {
@@ -14,7 +14,7 @@ namespace BillyPassepartout
 
         static DrawManager()
         {
-            items = new List<IDrawable>[(int)DrawLayer.Last];
+            items = new List<IDrawable>[(int)DrawLayer.LAST];
 
             for (int i = 0; i < items.Length; i++)
             {

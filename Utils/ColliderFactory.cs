@@ -35,5 +35,10 @@ namespace BillyPassepartout
         {
             return new BoxCollider(obj.RigidBody, obj.HalfWidth * 2, obj.HalfHeight * 2);
         }
+
+        public static BoxCollider CreateBoxFor(GameObject obj, float width, float height)
+        {
+            return new BoxCollider(obj.RigidBody, width, height);
+        }
     }
 }

@@ -19,10 +19,12 @@ namespace BillyPassepartout
         private TmxTileLayer[] tileLayers;
         private TmxObjectLayer objectsLayer;
 
+        public Map PathfindingMap { get; private set; }
+
         public TmxMap(string filePath)
         {
             // Map Drawing Settings
-            Layer = DrawLayer.Background;
+            Layer = DrawLayer.BACKGROUND;
             DrawManager.AddItem(this);
 
             // CREATE AND LOAD XML DOCUMENT FROM TMX MAP FILE
@@ -66,7 +68,7 @@ namespace BillyPassepartout
             // ObjectLayer Node and Attributes
             XmlNode objectLayerNode = mapNode.SelectSingleNode("objectgroup");
             // Create objectLayer from collected data
-            objectsLayer = new TmxObjectLayer(objectLayerNode, tileset);
+            objectsLayer = new TmxObjectLayer(objectLayerNode, tileset, mapCols, mapRows);
             
             //Layers nodes
             XmlNodeList layersNodes = mapNode.SelectNodes("layer");
@@ -77,6 +79,8 @@ namespace BillyPassepartout
             {
                 tileLayers[i] = new TmxTileLayer(layersNodes[i], tileset, mapCols, mapRows, mapTileW, mapTileH);
             }
+
+            PathfindingMap = new Map(mapCols, mapRows, objectsLayer.Cells);
         }
 
         public static int GetIntAttribute(XmlNode node, string attrName)

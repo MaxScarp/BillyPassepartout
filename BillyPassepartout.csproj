@@ -61,6 +61,10 @@
     <Compile Include="Actors\Actor.cs" />
     <Compile Include="Actors\Enemy.cs" />
     <Compile Include="Actors\Player.cs" />
+    <Compile Include="Pathfinding\Agent.cs" />
+    <Compile Include="Pathfinding\Map.cs" />
+    <Compile Include="Pathfinding\Node.cs" />
+    <Compile Include="Pathfinding\PriorityQueue.cs" />
     <Compile Include="Storage\AnimationStorage.cs" />
     <Compile Include="Tiled\TmxObject.cs" />
     <Compile Include="Tiled\TmxObjectLayer.cs" />

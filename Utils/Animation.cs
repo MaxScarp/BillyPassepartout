@@ -1,6 +1,6 @@
 ﻿namespace BillyPassepartout
 {
-    class Animation
+    class Animation : IUpdatable
     {
         private int currentFrame;
         private float elapsedTime;
@@ -49,6 +49,8 @@
             this.loop = loop;
             this.pingPong = pingPong;
             pingPongBegan = false;
+
+            UpdateManager.AddItem(this);
         }
 
         public void Update()

@@ -11,7 +11,9 @@ namespace BillyPassepartout
     {
         private int xOff, yOff;
 
-        public TmxObject(string objName, int offsetX, int offsetY, int w, int h, bool solid) : base("tileset", DrawLayer.Middleground, w, h)
+        public int Weight { get; private set; }
+
+        public TmxObject(string objName, int offsetX, int offsetY, int w, int h, bool solid) : base("tileset", DrawLayer.MIDDLEGROUND, w, h)
         {
             xOff = offsetX;
             yOff = offsetY;
@@ -20,7 +22,14 @@ namespace BillyPassepartout
             {
                 RigidBody = new RigidBody(this);
                 RigidBody.Collider = ColliderFactory.CreateBoxFor(this);
+                RigidBody.Collider.Offset = new Vector2(0.23f, 0.23f);
                 RigidBody.Type = RigidBodyType.TILE;
+
+                Weight = int.MaxValue;
+            }
+            else
+            {
+                Weight = 1;
             }
 
             IsActive = true;

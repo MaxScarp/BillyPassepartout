@@ -60,11 +60,11 @@ namespace BillyPassepartout
 
                     if (items[i] is CircleCollider)
                     {
-                        col = new OpenTK.Vector4(1.0f, 0.0f, 0.0f, 1.0f);
+                        col = new OpenTK.Vector4(0.0f, 0.0f, 1.0f, 1.0f);
                     }
                     else
                     {
-                        col = new OpenTK.Vector4(0.0f, 1.0f, 0.0f, 1.0f);
+                        col = new OpenTK.Vector4(1.0f, 0.0f, 0.0f, 1.0f);
                     }
 
                     sprites[i].position = items[i].Position - new OpenTK.Vector2(items[i].RigidBody.GameObject.HalfWidth, items[i].RigidBody.GameObject.HalfHeight) + items[i].Offset;

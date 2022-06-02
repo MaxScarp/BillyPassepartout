@@ -6,15 +6,14 @@ namespace BillyPassepartout
     abstract class Actor : GameObject
     {
         protected Animation animation;
+        protected Agent agent;
+
+        public float Speed { get; protected set; }
 
         public Actor(string textureName, float w = 0, float h = 0) : base(textureName, w:w, h:h)
         {
             RigidBody = new RigidBody(this);
-        }
-
-        public override void Update()
-        {
-            animation.Update();
+            Speed = 5.5f;
         }
 
         public override void Draw()
@@ -23,11 +22,6 @@ namespace BillyPassepartout
             {
                 sprite.DrawTexture(texture, animation.XOffset, animation.YOffset, animation.FrameWidth, animation.FrameHeight);
             }
-        }
-
-        public override void Destroy()
-        {
-            base.Destroy();
         }
 
         protected virtual void Attack() { }

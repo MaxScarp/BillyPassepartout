@@ -8,7 +8,7 @@ namespace BillyPassepartout
 {
     class Tile : GameObject
     {
-        public Tile(string textureName = "earth", DrawLayer layer = DrawLayer.Playground) : base(textureName)
+        public Tile(string textureName = "earth", DrawLayer layer = DrawLayer.PLAYGROUND) : base(textureName)
         {
             RigidBody = new RigidBody(this);
             RigidBody.Type = RigidBodyType.TILE;
