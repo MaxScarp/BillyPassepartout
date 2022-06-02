@@ -7,16 +7,14 @@ using OpenTK;
 
 namespace BillyPassepartout
 {
-    enum RigidBodyType { Player = 1, Tile = 2 }
+    enum RigidBodyType { PLAYER = 1, TILE = 2 }
 
     class RigidBody
     {
         public Vector2 Velocity;
 
         public GameObject GameObject;
-        public bool IsGravityAffected;
-        public bool IsCollisionAffected = true;
-        public float Friction;
+        public bool IsCollisionAffected;
 
         public Collider Collider;
 
@@ -32,36 +30,13 @@ namespace BillyPassepartout
         {
             GameObject = owner;
             PhysicsManager.AddItem(this);
+
+            IsCollisionAffected = true;
         }
 
         public void Update()
         {
-            if (IsGravityAffected)
-            {
-                Velocity.Y += PhysicsManager.G * Game.DeltaTime;
-            }
-
-            // Friction
-            ApplyFriction();
-
             GameObject.Position += Velocity * Game.DeltaTime;
-        }
-
-        protected void ApplyFriction()
-        {
-            if(Friction > 0 && Velocity != Vector2.Zero)
-            {
-                float fAmount = Friction * Game.DeltaTime;
-                float newVelocityLength = Velocity.Length - fAmount;
-
-                if(newVelocityLength < 0)
-                {
-                    Velocity = Vector2.Zero;
-                    return;
-                }
-
-                Velocity = Velocity.Normalized() * newVelocityLength;
-            }
         }
 
         public bool Collides(RigidBody other, ref Collision collisionInfo)

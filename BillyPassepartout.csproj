@@ -58,6 +58,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actors\Actor.cs" />
+    <Compile Include="Actors\Enemy.cs" />
+    <Compile Include="Actors\Player.cs" />
+    <Compile Include="Storage\AnimationStorage.cs" />
     <Compile Include="Tiled\TmxObject.cs" />
     <Compile Include="Tiled\TmxObjectLayer.cs" />
     <Compile Include="Utils\Animation.cs" />
@@ -102,6 +106,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Hero\Dog.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Tileset.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

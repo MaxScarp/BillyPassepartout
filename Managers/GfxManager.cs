@@ -10,10 +10,12 @@ namespace BillyPassepartout
     static class GfxManager
     {
         private static Dictionary<string, Texture> textures;
+        private static Dictionary<string, Animation> animations;
 
         static GfxManager()
         {
             textures = new Dictionary<string, Texture>();
+            animations = new Dictionary<string, Animation>();
         }
 
         public static Texture AddTexture(string name, string path)
@@ -40,9 +42,34 @@ namespace BillyPassepartout
             return t;
         }
 
+        public static Animation AddAnimation(string name, int fps, int totFrames, int frameW, int frameH, int startCol = 1, int startRow = 1, bool loop = true, bool pingPong = false)
+        {
+            Animation a = new Animation(fps, totFrames, frameW, frameH, startCol, startRow, loop, pingPong);
+
+            if (a != null)
+            {
+                animations[name] = a;
+            }
+
+            return a;
+        }
+
+        public static Animation GetAnimation(string name)
+        {
+            Animation a = null;
+
+            if (animations.ContainsKey(name))
+            {
+                a = animations[name];
+            }
+
+            return a;
+        }
+
         public static void ClearAll()
         {
             textures.Clear();
+            animations.Clear();
         }
     }
 }

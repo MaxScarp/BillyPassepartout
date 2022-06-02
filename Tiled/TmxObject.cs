@@ -20,7 +20,7 @@ namespace BillyPassepartout
             {
                 RigidBody = new RigidBody(this);
                 RigidBody.Collider = ColliderFactory.CreateBoxFor(this);
-                RigidBody.Type = RigidBodyType.Tile;
+                RigidBody.Type = RigidBodyType.TILE;
             }
 
             IsActive = true;

@@ -11,8 +11,6 @@ namespace BillyPassepartout
         static List<RigidBody> items;
         static Collision collisionInfo;
 
-        public static float G = 9f;
-
         static PhysicsManager()
         {
             items = new List<RigidBody>();

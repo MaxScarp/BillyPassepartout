@@ -10,13 +10,12 @@ namespace BillyPassepartout
 {
     class GameObject : IUpdatable, IDrawable
     {
-        // References
         protected Sprite sprite;
         protected Texture texture;
         public RigidBody RigidBody;
-        // Variables
+
         public bool IsActive;
-        // Properties
+
         public virtual Vector2 Position { get { return sprite.position; } set { sprite.position = value; } }
         public float X { get { return sprite.position.X; } set { sprite.position.X = value; } }
         public float Y { get { return sprite.position.Y; } set { sprite.position.Y = value; } }

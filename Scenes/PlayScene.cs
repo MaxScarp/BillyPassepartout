@@ -11,13 +11,15 @@ namespace BillyPassepartout
 {
     class PlayScene : Scene
     {
-        TmxMap map;
+        private TmxMap map;
+        private Player player;
 
         public override void Start()
         {
             LoadAssets();
             LoadAudio();
             LoadMap();
+            LoadPlayer();
             
             base.Start();
         }
@@ -30,6 +32,7 @@ namespace BillyPassepartout
         public override void Input()
         {
             Quit();
+            player.Input();
         }
 
         public override void Update()
@@ -44,7 +47,11 @@ namespace BillyPassepartout
 
         private void LoadAssets()
         {
+            //Map
             GfxManager.AddTexture("tileset", "Assets/Tileset.png");
+
+            //Player
+            GfxManager.AddTexture("dog", "Assets/Hero/Dog.png");
         }
 
         private void LoadAudio() { }
@@ -52,6 +59,11 @@ namespace BillyPassepartout
         private void LoadMap()
         {
             map = new TmxMap("Tiled/XML/HomeMap.xml");
+        }
+
+        private void LoadPlayer()
+        {
+            player = new Player();
         }
     }
 }

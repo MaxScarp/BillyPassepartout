@@ -11,7 +11,7 @@ namespace BillyPassepartout
         public Tile(string textureName = "earth", DrawLayer layer = DrawLayer.Playground) : base(textureName)
         {
             RigidBody = new RigidBody(this);
-            RigidBody.Type = RigidBodyType.Tile;
+            RigidBody.Type = RigidBodyType.TILE;
             RigidBody.Collider = ColliderFactory.CreateBoxFor(this);
             IsActive = true;
         }
