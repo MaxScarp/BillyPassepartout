@@ -7,7 +7,7 @@ using OpenTK;
 
 namespace BillyPassepartout
 {
-    enum RigidBodyType { PLAYER = 1, TILE = 2 }
+    enum RigidBodyType { PLAYER = 1, KEY = 2 }
 
     class RigidBody
     {

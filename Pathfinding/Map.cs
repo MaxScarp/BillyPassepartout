@@ -20,11 +20,11 @@ namespace BillyPassepartout
 
         public Node[] Nodes { get; }
 
-        public Map(int width, int height, int[] cells)
+        public Map(int width, int height, TmxObjectLayer objectLayer)
         {
             this.width = width;
             this.height = height;
-            this.cells = cells;
+            cells = objectLayer.Cells;
 
             Nodes = new Node[cells.Length];
 
@@ -32,7 +32,7 @@ namespace BillyPassepartout
             {
                 int x = i % width;
                 int y = i / width;
-                
+
                 if(cells[i] > 0) 
                 {
                     Nodes[i] = new Node(x, y, cells[i]);
@@ -89,11 +89,10 @@ namespace BillyPassepartout
             }
         }
 
-        void AddNode(int x, int y, int cost = 1)
+        void AddNode(int x, int y, int cost)
         {
             int index = y * width + x;
-            //Node node = new Node(x, y, cost);
-            Nodes[index].SetCost(1);
+            Nodes[index].SetCost(cost);
             AddNeighbours(Nodes[index], x, y);
 
             foreach(Node adj in Nodes[index].Neighbours)
@@ -102,7 +101,7 @@ namespace BillyPassepartout
             }
 
             cells[index] = cost;
-        } //TODO
+        }
 
         void RemoveNode(int x, int y)
         {
@@ -115,8 +114,8 @@ namespace BillyPassepartout
             }
 
             Nodes[index].SetCost(int.MaxValue);
-            cells[index] = 0;
-        } //TODO
+            cells[index] = int.MaxValue;
+        }
 
         public Node GetNode(int x, int y)
         {
@@ -135,21 +134,21 @@ namespace BillyPassepartout
             } while (randomNode.Cost == int.MaxValue);
 
             return randomNode;
-        } //TODO
+        } //DEBUG
 
-        public void ToggleNode(int x, int y)
+        public void ToggleNode(int x, int y, int cost = 1)
         {
             Node node = GetNode(x, y);
 
             if(node.Cost == int.MaxValue)
             {
-                AddNode(x, y);
+                AddNode(x, y, cost);
             }
             else
             {
                 RemoveNode(x, y);
             }
-        } //TODO
+        }
 
         public List<Node> GetPath(int startX, int startY, int endX, int endY)
         {

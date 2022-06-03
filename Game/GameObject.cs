@@ -10,31 +10,33 @@ namespace BillyPassepartout
 {
     class GameObject : IUpdatable, IDrawable
     {
-        protected Sprite sprite;
         protected Texture texture;
         public RigidBody RigidBody;
 
         public bool IsActive;
 
-        public virtual Vector2 Position { get { return sprite.position; } set { sprite.position = value; } }
-        public float X { get { return sprite.position.X; } set { sprite.position.X = value; } }
-        public float Y { get { return sprite.position.Y; } set { sprite.position.Y = value; } }
-        public float HalfWidth { get { return sprite.Width * 0.5f; } }
-        public float HalfHeight { get { return sprite.Height * 0.5f; } }
-        public float Width { get { return sprite.Width; } }
-        public float Height { get { return sprite.Height; } }
+        public Sprite Sprite { get; protected set; }
+        public virtual Vector2 Position { get { return Sprite.position; } set { Sprite.position = value; } }
+        public int X { get { return (int)Sprite.position.X; } set { Sprite.position.X = value; } }
+        public int Y { get { return (int)Sprite.position.Y; } set { Sprite.position.Y = value; } }
+        public float HalfWidth { get { return Sprite.Width * 0.5f; } }
+        public float HalfHeight { get { return Sprite.Height * 0.5f; } }
+        public float Width { get { return Sprite.Width; } }
+        public float Height { get { return Sprite.Height; } }
 
         public Vector2 Forward
         { 
             get
             {
-                return new Vector2((float)Math.Cos(sprite.Rotation), (float)Math.Sin(sprite.Rotation));
+                return new Vector2((float)Math.Cos(Sprite.Rotation), (float)Math.Sin(Sprite.Rotation));
             }
             set
             {
-                sprite.Rotation = (float)Math.Atan2(value.Y, value.X);
+                Sprite.Rotation = (float)Math.Atan2(value.Y, value.X);
             }
         }
+
+        public int Direction { get { return Math.Sign(RigidBody.Velocity.X); } }
 
         public DrawLayer Layer { get; protected set; }
 
@@ -45,9 +47,9 @@ namespace BillyPassepartout
             float spriteW = w != 0 ? w : Game.PixelsToUnits(texture.Width);
             float spriteH = h != 0 ? h : Game.PixelsToUnits(texture.Height);
 
-            sprite = new Sprite(spriteW, spriteH);
+            Sprite = new Sprite(spriteW, spriteH);
 
-            sprite.pivot = new Vector2(Game.PixelsToUnits(HalfWidth), Game.PixelsToUnits(HalfHeight));
+            Sprite.pivot = new Vector2(Game.PixelsToUnits(HalfWidth), Game.PixelsToUnits(HalfHeight));
 
             Layer = layer;
 
@@ -63,13 +65,13 @@ namespace BillyPassepartout
         {
             if (IsActive)
             {
-                sprite.DrawTexture(texture);
+                Sprite.DrawTexture(texture);
             }
         }
 
         public virtual void Destroy()
         {
-            sprite = null;
+            Sprite = null;
             texture = null;
 
             UpdateManager.RemoveItem(this);

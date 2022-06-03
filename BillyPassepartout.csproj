@@ -61,6 +61,7 @@
     <Compile Include="Actors\Actor.cs" />
     <Compile Include="Actors\Enemy.cs" />
     <Compile Include="Actors\Player.cs" />
+    <Compile Include="Game\Key.cs" />
     <Compile Include="Pathfinding\Agent.cs" />
     <Compile Include="Pathfinding\Map.cs" />
     <Compile Include="Pathfinding\Node.cs" />
@@ -98,19 +99,22 @@
     <Compile Include="Scenes\Scene.cs" />
     <Compile Include="Scenes\TitleScene.cs" />
     <Compile Include="Utils\RandomGenerator.cs" />
-    <Compile Include="Tiled\Tile.cs" />
     <Compile Include="Tiled\TmxLayer.cs" />
     <Compile Include="Tiled\TmxMap.cs" />
     <Compile Include="Tiled\TmxTileset.cs" />
     <Compile Include="Managers\UpdateManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="App.config" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Hero\Dog.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Objects\Key.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Tileset.png">

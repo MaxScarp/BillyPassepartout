@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Aiv.Fast2D;
 using OpenTK;
-using Aiv.Audio;
 
 namespace BillyPassepartout
 {
@@ -18,16 +15,15 @@ namespace BillyPassepartout
         {
             AnimationStorage.LoadPlayerAnimations();
             Position = Game.ScreenCenter;
-            
-            RigidBody.Collider = ColliderFactory.CreateBoxFor(this);
-            RigidBody.Collider.Offset = new Vector2(0.23f, 0.23f);
+
+            RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
+            RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
             RigidBody.Type = RigidBodyType.PLAYER;
-            RigidBody.AddCollisionType(RigidBodyType.TILE);
 
-            animation = GfxManager.GetAnimation("IdleD");
-            animation.Start();
+            Animation = GfxManager.GetAnimation("idleD");
+            Animation.Start();
 
-            agent = new Agent(this);
+            Agent = new Agent(this);
 
             isMouseLeftClicked = false;
 
@@ -43,9 +39,9 @@ namespace BillyPassepartout
                     if (!isMouseLeftClicked)
                     {
                         isMouseLeftClicked = true;
-                        Vector2 mousePos = new Vector2(Game.Window.MouseX, Game.Window.MouseY);
-                        List<Node> path = ((PlayScene)SceneManager.CurrentScene).Map.PathfindingMap.GetPath(agent.X, agent.Y, (int)mousePos.X, (int)mousePos.Y);
-                        agent.SetPath(path);
+
+                        List<Node> path = ((PlayScene)SceneManager.CurrentScene).Map.PathfindingMap.GetPath(Agent.X, Agent.Y, (int)Game.MousePos.X, (int)Game.MousePos.Y);
+                        Agent.SetPath(path);
                     }
                 }
                 else if (isMouseLeftClicked)
@@ -54,16 +50,40 @@ namespace BillyPassepartout
                 }
             }
         }
+
         public override void Update()
         {
             if (IsActive)
             {
-                base.Update();
-            } 
+                Node lastNode = Agent.GetLastNode();
+                if(lastNode != null)
+                {
+                    if(lastNode.X > (int)Position.X)
+                    {
+                        Sprite.FlipX = false;
+                        Animation = GfxManager.GetAnimation("walkR");
+                    }
+                    else
+                    {
+                        Sprite.FlipX = true;
+                        Animation = GfxManager.GetAnimation("walkR");
+                    }
+                }
+                else
+                {
+                    if(RigidBody.Velocity == Vector2.Zero)
+                    {
+                        Animation = GfxManager.GetAnimation("idleD");
+                    }
+                }
+
+                Animation.Start();
+            }
         }
+
         public override void Draw()
         {
-            if(IsActive)
+            if (IsActive)
             {
                 base.Draw();
             }

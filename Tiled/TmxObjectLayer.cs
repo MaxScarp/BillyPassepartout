@@ -11,9 +11,12 @@ namespace BillyPassepartout
     class TmxObjectLayer
     {
         public int[] Cells { get; private set; }
+        public List<TmxObject> Objects { get; private set; }
 
         public TmxObjectLayer(XmlNode objectLayerNode, TmxTileset tileset, int mapWidth, int mapHeight)
         {
+            Objects = new List<TmxObject>();
+
             XmlNodeList objectsNodes = objectLayerNode.SelectNodes("object");
 
             TmxObject[] objects = new TmxObject[objectsNodes.Count];
@@ -40,12 +43,14 @@ namespace BillyPassepartout
                 bool solid = TmxMap.GetBoolAttribute(propertyNode, "value");
 
                 objects[i] = new TmxObject(objName, objXOff, objYOff, (int)Game.PixelsToUnits(objW), (int)Game.PixelsToUnits(objH), solid);
-                objects[i].Position = new Vector2(Game.PixelsToUnits(objX), Game.PixelsToUnits(objY)-1);
+                objects[i].Position = new Vector2((int)Game.PixelsToUnits(objX), (int)Game.PixelsToUnits(objY)-1);
 
                 int x = objX / objW;
                 int y = objY / objH - 1;
 
                 Cells[y * mapWidth + x] = objects[i].Weight;
+
+                Objects.Add(objects[i]);
             }
         }
     }

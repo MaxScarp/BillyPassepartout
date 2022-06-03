@@ -17,10 +17,10 @@ namespace BillyPassepartout
 
         public TextChar(Vector2 spritePosition, char character, Font font) : base(font.TextureName, DrawLayer.GUI, font.CharacterWidth, font.CharacterHeight)
         {
-            sprite.position = spritePosition;
+            Sprite.position = spritePosition;
             this.font = font;
             Character = character;
-            sprite.pivot = Vector2.Zero;
+            Sprite.pivot = Vector2.Zero;
         }
 
         protected void ComputeOffset()
@@ -32,7 +32,7 @@ namespace BillyPassepartout
         {
             if (IsActive)
             {
-                sprite.DrawTexture(texture, (int)textureOffset.X, (int)textureOffset.Y, font.CharacterWidth, font.CharacterHeight);
+                Sprite.DrawTexture(texture, (int)textureOffset.X, (int)textureOffset.Y, font.CharacterWidth, font.CharacterHeight);
             }
         }
     }

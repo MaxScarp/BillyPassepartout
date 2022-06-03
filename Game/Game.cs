@@ -19,6 +19,18 @@ namespace BillyPassepartout
         public static float OptimalUnitSize { get; private set; }
         public static Vector2 ScreenCenter { get; private set; }
         public static float HalfDiagonalSquared { get { return ScreenCenter.LengthSquared; } }
+        public static Vector2 MousePos 
+        {
+            get
+            {
+                if(Window.MousePosition.X >= 0 && Window.MousePosition.X < Game.Window.OrthoWidth && Window.MousePosition.Y >= 0 && Window.MousePosition.Y < Game.Window.OrthoHeight)
+                {
+                    return new Vector2(Window.MousePosition.X, Window.MousePosition.Y);
+                }
+
+                return Vector2.Zero;
+            }
+        }
 
         public static void Init()
         {

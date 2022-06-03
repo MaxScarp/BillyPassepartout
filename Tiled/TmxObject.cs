@@ -9,22 +9,19 @@ namespace BillyPassepartout
 {
     class TmxObject : GameObject
     {
-        private int xOff, yOff;
+        protected int xOff, yOff;
 
         public int Weight { get; private set; }
+        public string Name { get; private set; }
 
         public TmxObject(string objName, int offsetX, int offsetY, int w, int h, bool solid) : base("tileset", DrawLayer.MIDDLEGROUND, w, h)
         {
+            Name = objName;
             xOff = offsetX;
             yOff = offsetY;
 
             if (solid)
             {
-                RigidBody = new RigidBody(this);
-                RigidBody.Collider = ColliderFactory.CreateBoxFor(this);
-                RigidBody.Collider.Offset = new Vector2(0.23f, 0.23f);
-                RigidBody.Type = RigidBodyType.TILE;
-
                 Weight = int.MaxValue;
             }
             else
@@ -35,11 +32,18 @@ namespace BillyPassepartout
             IsActive = true;
         }
 
+        public override void Update()
+        {
+            if(IsActive)
+            {
+            }
+        }
+
         public override void Draw()
         {
             if (IsActive)
             {
-                sprite.DrawTexture(texture, xOff, yOff, 16, 16);
+                Sprite.DrawTexture(texture, xOff, yOff, 16, 16);
             }
         }
     }

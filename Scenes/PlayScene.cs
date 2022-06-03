@@ -13,6 +13,7 @@ namespace BillyPassepartout
     {
         public TmxMap Map { get; private set; }
         public Player Player { get; private set; }
+        public Key Key { get; private set; }
 
         public override void Start()
         {
@@ -20,6 +21,7 @@ namespace BillyPassepartout
             LoadAudio();
             LoadMap();
             LoadPlayer();
+            LoadObjects();
             
             base.Start();
         }
@@ -55,6 +57,9 @@ namespace BillyPassepartout
 
             //Player
             GfxManager.AddTexture("dog", "Assets/Hero/Dog.png");
+
+            //Objects
+            GfxManager.AddTexture("key", "Assets/Objects/Key.png");
         }
 
         private void LoadAudio() { }
@@ -67,6 +72,26 @@ namespace BillyPassepartout
         private void LoadPlayer()
         {
             Player = new Player();
+        }
+
+        private void LoadObjects()
+        {
+            Key = new Key();
+            Key.OnKeyCollected += KeyCollected;
+        }
+
+        private void KeyCollected(object sender)
+        {
+            foreach (TmxObject obj in Map.ObjectsLayer.Objects)
+            {
+                if (obj.Name == "Door")
+                {
+                    Map.PathfindingMap.ToggleNode(obj.X, obj.Y, 2);
+                    Key.IsActive = false;
+                    Key.OnKeyCollected -= KeyCollected;
+                    break;
+                }
+            }
         }
     }
 }

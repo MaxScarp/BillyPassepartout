@@ -17,9 +17,9 @@ namespace BillyPassepartout
         private TmxTileset tileset;
         // MultiLayers
         private TmxTileLayer[] tileLayers;
-        private TmxObjectLayer objectsLayer;
 
         public Map PathfindingMap { get; private set; }
+        public TmxObjectLayer ObjectsLayer { get; private set; }
 
         public TmxMap(string filePath)
         {
@@ -68,7 +68,7 @@ namespace BillyPassepartout
             // ObjectLayer Node and Attributes
             XmlNode objectLayerNode = mapNode.SelectSingleNode("objectgroup");
             // Create objectLayer from collected data
-            objectsLayer = new TmxObjectLayer(objectLayerNode, tileset, mapCols, mapRows);
+            ObjectsLayer = new TmxObjectLayer(objectLayerNode, tileset, mapCols, mapRows);
             
             //Layers nodes
             XmlNodeList layersNodes = mapNode.SelectNodes("layer");
@@ -80,7 +80,7 @@ namespace BillyPassepartout
                 tileLayers[i] = new TmxTileLayer(layersNodes[i], tileset, mapCols, mapRows, mapTileW, mapTileH);
             }
 
-            PathfindingMap = new Map(mapCols, mapRows, objectsLayer.Cells);
+            PathfindingMap = new Map(mapCols, mapRows, ObjectsLayer);
         }
 
         public static int GetIntAttribute(XmlNode node, string attrName)
