@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "HomeMap.xml",
+    "activeFile": "OutdoorMap.xml",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Tutti i file (*)",
@@ -15,12 +15,20 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 372.75,
-                "y": 167.5
+                "x": 315.25,
+                "y": 177.5
             }
         },
         "HomeMap.xml#Tileset": {
             "scaleInDock": 1
+        },
+        "OutdoorMap.xml": {
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 263.25,
+                "y": 196.5
+            }
         },
         "Tileset.tsx": {
             "scaleInDock": 1,
@@ -28,7 +36,7 @@
         },
         "Tileset.xml": {
             "dynamicWrapping": false,
-            "scaleInDock": 2,
+            "scaleInDock": 1.5,
             "scaleInEditor": 3
         },
         "Z:/DOWNLOAD/Map.tmx": {
@@ -46,20 +54,22 @@
     },
     "last.externalTilesetPath": "Z:/CORSI/AIV/PRIMO ANNO/PROGETTI/BillyPassepartout/Tiled",
     "last.imagePath": "Z:/ASSETS/AIV Final Project/TILESET",
-    "map.height": 48,
+    "map.height": 24,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 64,
+    "map.width": 32,
     "openFiles": [
         "HomeMap.xml",
-        "Tileset.xml"
+        "Tileset.xml",
+        "OutdoorMap.xml"
     ],
     "project": "Tiled.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "Tileset.xml",
         "HomeMap.xml",
+        "Tileset.xml",
+        "OutdoorMap.xml",
         "Tileset.tsx",
         "Z:/DOWNLOAD/Map.tmx"
     ],

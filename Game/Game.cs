@@ -11,7 +11,8 @@ namespace BillyPassepartout
     static class Game
     {
         public static Window Window;
-        public static PlayScene PlayScene;
+        public static HomeScene HomeScene;
+        public static OutdoorScene OutdoorScene;
         public static float DeltaTime { get { return Window.DeltaTime; } }
 
         public static float UnitSize { get; private set; }
@@ -44,7 +45,8 @@ namespace BillyPassepartout
 
             ScreenCenter = new Vector2(Window.OrthoWidth * 0.5f, Window.OrthoHeight * 0.5f);
 
-            PlayScene = new PlayScene();
+            HomeScene = new HomeScene();
+            OutdoorScene = new OutdoorScene();
 
             SceneManager.Start();
         }

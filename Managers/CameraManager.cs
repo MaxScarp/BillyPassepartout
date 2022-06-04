@@ -90,5 +90,15 @@ namespace BillyPassepartout
             MainCamera.position.X = MathHelper.Clamp(MainCamera.position.X, CameraLimits.MinX, CameraLimits.MaxX);
             MainCamera.position.Y = MathHelper.Clamp(MainCamera.position.Y, CameraLimits.MinY, CameraLimits.MaxY);
         }
+
+        public static void ClearAll()
+        {
+            if(cameras != null && cameras.Count > 0 )
+            {
+                cameras.Clear();
+            }
+            MainCamera = null;
+            Target = null;
+        }
     }
 }

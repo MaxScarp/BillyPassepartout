@@ -56,33 +56,33 @@ namespace BillyPassepartout
 
         public void Update()
         {
-            if((int)Game.MousePos.X == sprite.position.X && (int)Game.MousePos.Y == sprite.position.Y)
+            if ((int)Game.MousePos.X == sprite.position.X && (int)Game.MousePos.Y == sprite.position.Y)
             {
                 isDrawable = true;
             }
             else
             {
                 isDrawable = false;
-            }
+            } 
         }
 
         public void Draw()
         {
-            if(isDrawable)
+            if (isDrawable)
             {
-                if(Cost == 1)
+                if (Cost == 1)
                 {
-                    sprite.DrawColor(new Vector4(0.0f, 1.0f, 0.0f, 0.2f));
+                    sprite.DrawColor(new Vector4(0.0f, 1.0f, 0.0f, 0.4f));
                 }
-                else if(Cost == 2)
+                else if (Cost == 2)
                 {
-                    sprite.DrawColor(new Vector4(0.0f, 0.0f, 1.0f, 0.2f));
+                    sprite.DrawColor(new Vector4(0.0f, 0.0f, 1.0f, 0.4f));
                 }
                 else
                 {
-                    sprite.DrawColor(new Vector4(1.0f, 0.0f, 0.0f, 0.2f));
+                    sprite.DrawColor(new Vector4(1.0f, 0.0f, 0.0f, 0.4f));
                 }
-            }
+            } 
         }
     }
 }

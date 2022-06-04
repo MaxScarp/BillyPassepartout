@@ -41,7 +41,10 @@ namespace BillyPassepartout
 
         public static void ClearAll()
         {
-            fonts.Clear();
+            if(fonts != null && fonts.Count > 0)
+            {
+                fonts.Clear();
+            }
             defaultFont = null;
         }
 

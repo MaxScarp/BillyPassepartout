@@ -134,7 +134,7 @@ namespace BillyPassepartout
             } while (randomNode.Cost == int.MaxValue);
 
             return randomNode;
-        } //DEBUG
+        } //TODO
 
         public void ToggleNode(int x, int y, int cost = 1)
         {

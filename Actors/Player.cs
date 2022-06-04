@@ -14,7 +14,6 @@ namespace BillyPassepartout
         public Player() : base("dog", Game.PixelsToUnits(16), Game.PixelsToUnits(16))
         {
             AnimationStorage.LoadPlayerAnimations();
-            Position = Game.ScreenCenter;
 
             RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
             RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
@@ -40,7 +39,7 @@ namespace BillyPassepartout
                     {
                         isMouseLeftClicked = true;
 
-                        List<Node> path = ((PlayScene)SceneManager.CurrentScene).Map.PathfindingMap.GetPath(Agent.X, Agent.Y, (int)Game.MousePos.X, (int)Game.MousePos.Y);
+                        List<Node> path = (SceneManager.CurrentScene).Map.PathfindingMap.GetPath(Agent.X, Agent.Y, (int)Game.MousePos.X, (int)Game.MousePos.Y);
                         Agent.SetPath(path);
                     }
                 }

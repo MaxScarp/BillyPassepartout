@@ -14,8 +14,6 @@ namespace BillyPassepartout
 
         public Key() : base("key", DrawLayer.FOREGROUND)
         {
-            Position = new Vector2(10, 2);
-
             RigidBody = new RigidBody(this);
             RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
             RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);

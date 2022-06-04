@@ -11,6 +11,7 @@ namespace BillyPassepartout
         private static List<Scene> scenes;
 
         private static int currentSceneIndex;
+        private static bool manualLoad;
 
         public static Scene CurrentScene { get; private set; }
 
@@ -18,6 +19,7 @@ namespace BillyPassepartout
         {
             scenes = new List<Scene>();
             currentSceneIndex = 0;
+            manualLoad = false;
         }
 
         public static void Start()
@@ -28,7 +30,7 @@ namespace BillyPassepartout
 
         public static void Update()
         {
-            if (!CurrentScene.IsPlaying)
+            if (!CurrentScene.IsPlaying && !manualLoad)
             {
                 if(++currentSceneIndex >= scenes.Count)
                 {
@@ -44,6 +46,15 @@ namespace BillyPassepartout
         public static void AddScene(Scene scene)
         {
             scenes.Add(scene);
+        }
+
+        public static void LoadScene(int sceneIndex)
+        {
+            manualLoad = true;
+            CurrentScene.OnExit();
+            CurrentScene = scenes[sceneIndex];
+            CurrentScene.Start();
+            manualLoad = false;
         }
     }
 }

@@ -66,6 +66,7 @@
     <Compile Include="Pathfinding\Map.cs" />
     <Compile Include="Pathfinding\Node.cs" />
     <Compile Include="Pathfinding\PriorityQueue.cs" />
+    <Compile Include="Scenes\OutdoorScene.cs" />
     <Compile Include="Storage\AnimationStorage.cs" />
     <Compile Include="Tiled\TmxObject.cs" />
     <Compile Include="Tiled\TmxObjectLayer.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\GameOverScene.cs" />
-    <Compile Include="Scenes\PlayScene.cs" />
+    <Compile Include="Scenes\HomeScene.cs" />
     <Compile Include="Scenes\Scene.cs" />
     <Compile Include="Scenes\TitleScene.cs" />
     <Compile Include="Utils\RandomGenerator.cs" />
@@ -121,6 +122,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Tiled\XML\HomeMap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tiled\XML\OutdoorMap.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

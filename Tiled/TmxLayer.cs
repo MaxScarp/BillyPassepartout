@@ -15,7 +15,6 @@ namespace BillyPassepartout
         private Texture layerTexture;
         private Sprite layerSprite;
         public string[] IDs { get; }
-        public DrawLayer Layer { get; protected set; }
 
         public TmxTileLayer(XmlNode layerNode, TmxTileset tileset, int cols, int rows, int tileW, int tileH)
         {

@@ -9,11 +9,9 @@ using System.Threading.Tasks;
 
 namespace BillyPassepartout
 {
-    class PlayScene : Scene
+    class OutdoorScene : Scene
     {
-        public TmxMap Map { get; private set; }
         public Player Player { get; private set; }
-        public Key Key { get; private set; }
 
         public override void Start()
         {
@@ -22,12 +20,14 @@ namespace BillyPassepartout
             LoadMap();
             LoadPlayer();
             LoadObjects();
-            
+
             base.Start();
         }
 
         public override void OnExit()
         {
+            Map = null;
+            Player = null;
             base.OnExit();
         }
 
@@ -57,40 +57,59 @@ namespace BillyPassepartout
 
             //Player
             GfxManager.AddTexture("dog", "Assets/Hero/Dog.png");
-
-            //Objects
-            GfxManager.AddTexture("key", "Assets/Objects/Key.png");
         }
 
         private void LoadAudio() { }
 
         private void LoadMap()
         {
-            Map = new TmxMap("Tiled/XML/HomeMap.xml");
+            Map = new TmxMap("Tiled/XML/OutdoorMap.xml");
         }
 
         private void LoadPlayer()
         {
             Player = new Player();
+            Player.Position = new Vector2(5, 18);
         }
 
         private void LoadObjects()
         {
-            Key = new Key();
-            Key.OnKeyCollected += KeyCollected;
-        }
-
-        private void KeyCollected(object sender)
-        {
             foreach (TmxObject obj in Map.ObjectsLayer.Objects)
             {
-                if (obj.Name == "Door")
+                if (obj.Name.Contains("Door"))
                 {
-                    Map.PathfindingMap.ToggleNode(obj.X, obj.Y, 2);
-                    Key.IsActive = false;
-                    Key.OnKeyCollected -= KeyCollected;
-                    break;
+                    obj.OnDoorReached += DoorReached;
                 }
+            }
+        }
+
+        private void DoorReached(object sender)
+        {
+            switch (((TmxObject)sender).Name)
+            {
+                case "LeftLowerDoor":
+                    break;
+                case "LeftUpperDoor":
+                    break;
+                case "UpperDoor":
+                    break;
+                case "RightUpperDoor":
+                    break;
+                case "RightLowerDoor":
+                    break;
+                case "DungeonDoor":
+                    break;
+                case "WallDoor":
+                    break;
+                case "HomeDoor":
+                    SceneManager.LoadScene(0);
+                    break;
+                case "LeftHouseDoor":
+                    break;
+                case "CenterHouseDoor":
+                    break;
+                case "RightHouseDoor":
+                    break;
             }
         }
     }

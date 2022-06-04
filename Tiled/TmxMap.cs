@@ -5,21 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using Aiv.Fast2D;
+using OpenTK;
 
 namespace BillyPassepartout
 {
     class TmxMap : IDrawable
     {
-        private string tmxFilePath;
-        public DrawLayer Layer { get; }
+        //TODO
+        //public delegate void DoorReachedEvent(object sender);
+        //public event DoorReachedEvent OnDoorReached;
 
         // Tileset
+        private string tmxFilePath;
         private TmxTileset tileset;
         // MultiLayers
         private TmxTileLayer[] tileLayers;
 
         public Map PathfindingMap { get; private set; }
         public TmxObjectLayer ObjectsLayer { get; private set; }
+        public DrawLayer Layer { get; }
 
         public TmxMap(string filePath)
         {
@@ -97,6 +101,12 @@ namespace BillyPassepartout
         {
             return node.Attributes.GetNamedItem(attrName).Value;
         }
+
+        //TODO
+        /*public void OnDoor()
+        {
+
+        }*/
 
         public void Draw()
         {

@@ -10,6 +10,10 @@ namespace BillyPassepartout
 {
     class TmxObjectLayer
     {
+        private bool open;
+        private bool close;
+        private bool solid;
+
         public int[] Cells { get; private set; }
         public List<TmxObject> Objects { get; private set; }
 
@@ -39,11 +43,29 @@ namespace BillyPassepartout
                 int objXOff = tileset.GetAtIndex(objId).X;
                 int objYOff = tileset.GetAtIndex(objId).Y;
 
-                XmlNode propertyNode = objectsNodes[i].SelectSingleNode("properties/property");
-                bool solid = TmxMap.GetBoolAttribute(propertyNode, "value");
+                XmlNodeList propertyNodes = objectsNodes[i].SelectNodes("properties/property");
+                foreach (XmlNode node in propertyNodes)
+                {
+                    string attributeName = TmxMap.GetStringAttribute(node, "name");
 
-                objects[i] = new TmxObject(objName, objXOff, objYOff, (int)Game.PixelsToUnits(objW), (int)Game.PixelsToUnits(objH), solid);
-                objects[i].Position = new Vector2((int)Game.PixelsToUnits(objX), (int)Game.PixelsToUnits(objY)-1);
+                    if(attributeName == "Solid")
+                    {
+                        solid = TmxMap.GetBoolAttribute(node, "value");
+                    }
+                    else if(attributeName == "Open")
+                    {
+                        open = TmxMap.GetBoolAttribute(node, "value");
+                    }
+                    else if(attributeName == "Close")
+                    {
+                        close = TmxMap.GetBoolAttribute(node, "value");
+                    }
+                        
+                }
+
+                objects[i] = new TmxObject(objName, objXOff, objYOff, (int)Game.PixelsToUnits(objW), (int)Game.PixelsToUnits(objH), solid, open, close);
+
+                objects[i].Position = new Vector2((int)Game.PixelsToUnits(objX), (int)Game.PixelsToUnits(objY) - 1);
 
                 int x = objX / objW;
                 int y = objY / objH - 1;

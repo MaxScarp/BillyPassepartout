@@ -9,34 +9,40 @@ namespace BillyPassepartout
 {
     class TmxObject : GameObject
     {
-        protected int xOff, yOff;
+        public delegate void OnDoorReachedEvent(object sender);
+        public event OnDoorReachedEvent OnDoorReached;
+
+        private int xOff, yOff;
 
         public int Weight { get; private set; }
         public string Name { get; private set; }
 
-        public TmxObject(string objName, int offsetX, int offsetY, int w, int h, bool solid) : base("tileset", DrawLayer.MIDDLEGROUND, w, h)
+        public TmxObject(string objName, int offsetX, int offsetY, int w, int h, bool solid = false, bool open = false, bool close = false) : base("tileset", DrawLayer.MIDDLEGROUND, w, h)
         {
             Name = objName;
             xOff = offsetX;
             yOff = offsetY;
 
-            if (solid)
+            if(solid)
             {
                 Weight = int.MaxValue;
             }
-            else
+
+            if(open)
             {
-                Weight = 1;
+                Weight = 2;
+            }
+
+            if(objName.Contains("Door"))
+            {
+                RigidBody = new RigidBody(this);
+                RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
+                RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
+                RigidBody.Type = RigidBodyType.DOOR;
+                RigidBody.AddCollisionType(RigidBodyType.PLAYER);
             }
 
             IsActive = true;
-        }
-
-        public override void Update()
-        {
-            if(IsActive)
-            {
-            }
         }
 
         public override void Draw()
@@ -45,6 +51,16 @@ namespace BillyPassepartout
             {
                 Sprite.DrawTexture(texture, xOff, yOff, 16, 16);
             }
+        }
+
+        public override void OnCollide(Collision collisionInfo)
+        {
+            DoorReached();
+        }
+
+        private void DoorReached()
+        {
+            OnDoorReached?.Invoke(this);
         }
     }
 }

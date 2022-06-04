@@ -10,6 +10,7 @@ namespace BillyPassepartout
     abstract class Scene
     {
         public bool IsPlaying { get; protected set; }
+        public TmxMap Map { get; protected set; }
 
         public Scene()
         {
@@ -23,6 +24,9 @@ namespace BillyPassepartout
 
         public virtual void OnExit()
         {
+            IsPlaying = false;
+
+            CameraManager.ClearAll();
             AudioManager.ClearAll();
             DebugManager.ClearAll();
             DrawManager.ClearAll();
