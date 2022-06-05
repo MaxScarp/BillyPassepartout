@@ -66,8 +66,11 @@
     <Compile Include="Pathfinding\Map.cs" />
     <Compile Include="Pathfinding\Node.cs" />
     <Compile Include="Pathfinding\PriorityQueue.cs" />
+    <Compile Include="Scenes\DungeonAfterScene.cs" />
+    <Compile Include="Scenes\DungeonBeforeScene.cs" />
     <Compile Include="Scenes\OutdoorScene.cs" />
     <Compile Include="Storage\AnimationStorage.cs" />
+    <Compile Include="Storage\PersistentData.cs" />
     <Compile Include="Tiled\TmxObject.cs" />
     <Compile Include="Tiled\TmxObjectLayer.cs" />
     <Compile Include="Utils\Animation.cs" />
@@ -115,10 +118,22 @@
     <Content Include="Assets\Hero\Dog.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Objects\SkullKey.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Objects\Sword.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Objects\Key.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Tileset.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tiled\XML\DungeonAfter.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Tiled\XML\DungeonBefore.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Tiled\XML\HomeMap.xml">

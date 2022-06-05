@@ -13,6 +13,8 @@ namespace BillyPassepartout
         public static Window Window;
         public static HomeScene HomeScene;
         public static OutdoorScene OutdoorScene;
+        public static DungeonBeforeScene DungeonBeforeScene;
+        public static DungeonAfterScene DungeonAfterScene;
         public static float DeltaTime { get { return Window.DeltaTime; } }
 
         public static float UnitSize { get; private set; }
@@ -47,6 +49,10 @@ namespace BillyPassepartout
 
             HomeScene = new HomeScene();
             OutdoorScene = new OutdoorScene();
+            DungeonBeforeScene = new DungeonBeforeScene();
+            DungeonAfterScene = new DungeonAfterScene();
+
+            PersistentData.Init();
 
             SceneManager.Start();
         }

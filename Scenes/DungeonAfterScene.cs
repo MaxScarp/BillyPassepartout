@@ -1,6 +1,4 @@
-﻿using Aiv.Fast2D;
-using Aiv.Audio;
-using OpenTK;
+﻿using OpenTK;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BillyPassepartout
 {
-    class OutdoorScene : Scene
+    class DungeonAfterScene : Scene
     {
         public override void Start()
         {
@@ -26,6 +24,7 @@ namespace BillyPassepartout
         {
             Map = null;
             Player = null;
+            Key = null;
             base.OnExit();
         }
 
@@ -55,13 +54,16 @@ namespace BillyPassepartout
 
             //Player
             GfxManager.AddTexture("dog", "Assets/Hero/Dog.png");
+
+            //Objects
+            GfxManager.AddTexture("key", "Assets/Objects/SkullKey.png");
         }
 
         private void LoadAudio() { }
 
         private void LoadMap()
         {
-            Map = new TmxMap("Tiled/XML/OutdoorMap.xml");
+            Map = new TmxMap("Tiled/XML/DungeonAfter.xml");
         }
 
         private void LoadPlayer()
@@ -72,17 +74,27 @@ namespace BillyPassepartout
 
         private void LoadObjects()
         {
+            if (!PersistentData.IsWallKeyCollected)
+            {
+                Key = new Key();
+                Key.IsActive = true;
+                Key.Position = new Vector2(18, 14);
+                Key.OnKeyCollected += KeyCollected;
+            }
+
             foreach (TmxObject obj in Map.ObjectsLayer.Objects)
             {
                 if (obj.Name.Contains("Door"))
                 {
                     obj.OnDoorReached += DoorReached;
-                    if(obj.Name == "WallDoor" && PersistentData.IsWallKeyCollected)
-                    {
-                        Map.PathfindingMap.ToggleNode(obj.X, obj.Y, 1);
-                    }
                 }
             }
+        }
+
+        private void KeyCollected(object sender)
+        {
+            Key.IsActive = false;
+            PersistentData.IsWallKeyCollected = true;
         }
 
         private void DoorReached(object sender)
@@ -91,37 +103,17 @@ namespace BillyPassepartout
 
             switch (((TmxObject)sender).Name)
             {
-                case "LeftLowerDoor":
+                case "OutsideDoor":
+                    Game.OutdoorScene.PlayerStartingPos = new Vector2(25, 20);
+                    SceneManager.LoadScene(1);
                     break;
-                case "LeftUpperDoor":
+                case "LeftDoor":
+                    Player.Agent.ResetPath();
+                    Player.Position = new Vector2(17, 16);
                     break;
-                case "UpperDoor":
-                    break;
-                case "RightUpperDoor":
-                    break;
-                case "RightLowerDoor":
-                    break;
-                case "DungeonDoor":
-                    if(!PersistentData.IsDungeonButtonPressed)
-                    {
-                        Game.DungeonBeforeScene.PlayerStartingPos = new Vector2(22, 5);
-                        IsPlaying = false;
-                    }
-                    else
-                    {
-                        Game.DungeonAfterScene.PlayerStartingPos = new Vector2(22, 5);
-                        SceneManager.LoadScene(3);
-                    }
-                    break;
-                case "HomeDoor":
-                    Game.HomeScene.PlayerStartingPos = new Vector2(27, 22);
-                    SceneManager.LoadScene(0);
-                    break;
-                case "LeftHouseDoor":
-                    break;
-                case "CenterHouseDoor":
-                    break;
-                case "RightHouseDoor":
+                case "RightDoor":
+                    Player.Agent.ResetPath();
+                    Player.Position = new Vector2(10, 16);
                     break;
             }
         }

@@ -47,6 +47,16 @@ namespace BillyPassepartout
             }
         }
 
+        public void ResetPath()
+        {
+            if (Path != null)
+            {
+                Path.Clear();
+            }
+
+            Target = null;
+        }
+
         public Node GetLastNode()
         {
             if(Path != null && Path.Count > 0)

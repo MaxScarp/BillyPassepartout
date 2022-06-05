@@ -13,6 +13,8 @@ namespace BillyPassepartout
         private bool open;
         private bool close;
         private bool solid;
+        private bool pressed;
+        private bool active;
 
         public int[] Cells { get; private set; }
         public List<TmxObject> Objects { get; private set; }
@@ -48,22 +50,27 @@ namespace BillyPassepartout
                 {
                     string attributeName = TmxMap.GetStringAttribute(node, "name");
 
-                    if(attributeName == "Solid")
+                    switch (attributeName)
                     {
-                        solid = TmxMap.GetBoolAttribute(node, "value");
-                    }
-                    else if(attributeName == "Open")
-                    {
-                        open = TmxMap.GetBoolAttribute(node, "value");
-                    }
-                    else if(attributeName == "Close")
-                    {
-                        close = TmxMap.GetBoolAttribute(node, "value");
-                    }
-                        
+                        case "Solid":
+                            solid = TmxMap.GetBoolAttribute(node, "value");
+                            break;
+                        case "Open":
+                            open = TmxMap.GetBoolAttribute(node, "value");
+                            break;
+                        case "Close":
+                            close = TmxMap.GetBoolAttribute(node, "value");
+                            break;
+                        case "Pressed":
+                            pressed = TmxMap.GetBoolAttribute(node, "value");
+                            break;
+                        case "Active":
+                            active = TmxMap.GetBoolAttribute(node, "value");
+                            break;
+                    }   
                 }
 
-                objects[i] = new TmxObject(objName, objXOff, objYOff, (int)Game.PixelsToUnits(objW), (int)Game.PixelsToUnits(objH), solid, open, close);
+                objects[i] = new TmxObject(objName, objXOff, objYOff, (int)Game.PixelsToUnits(objW), (int)Game.PixelsToUnits(objH), solid, open, close, pressed, active);
 
                 objects[i].Position = new Vector2((int)Game.PixelsToUnits(objX), (int)Game.PixelsToUnits(objY) - 1);
 

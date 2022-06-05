@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "OutdoorMap.xml",
+    "activeFile": "DungeonAfter.xml",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Tutti i file (*)",
@@ -11,11 +11,50 @@
         "": {
             "scaleInEditor": 1
         },
+        "Dungeon.xml": {
+            "scale": 2,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 242,
+                "y": 215
+            }
+        },
+        "Dungeon.xml#PixelPackTOPDOWN8BIT": {
+            "scaleInDock": 1.5
+        },
+        "DungeonAfter.xml": {
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 217.66666666666663,
+                "y": 199
+            }
+        },
+        "DungeonAfter.xml#PixelPackTOPDOWN8BIT": {
+            "scaleInDock": 1
+        },
+        "DungeonAfter.xml#Tileset": {
+            "scaleInDock": 2
+        },
+        "DungeonBefore.xml": {
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 87.66666666666667,
+                "y": 167.66666666666666
+            }
+        },
+        "DungeonBefore.xml#PixelPackTOPDOWN8BIT": {
+            "scaleInDock": 1
+        },
+        "DungeonBefore.xml#Tileset": {
+            "scaleInDock": 1.5
+        },
         "HomeMap.xml": {
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 315.25,
+                "x": 315,
                 "y": 177.5
             }
         },
@@ -26,8 +65,8 @@
             "scale": 2,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 263.25,
-                "y": 196.5
+                "x": 202,
+                "y": 283
             }
         },
         "Tileset.tsx": {
@@ -60,19 +99,22 @@
     "map.tileWidth": 16,
     "map.width": 32,
     "openFiles": [
-        "HomeMap.xml",
-        "Tileset.xml",
-        "OutdoorMap.xml"
+        "DungeonBefore.xml",
+        "DungeonAfter.xml"
     ],
     "project": "Tiled.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "HomeMap.xml",
+        "DungeonBefore.xml",
+        "DungeonAfter.xml",
         "Tileset.xml",
         "OutdoorMap.xml",
+        "HomeMap.xml",
+        "Dungeon.xml",
         "Tileset.tsx",
         "Z:/DOWNLOAD/Map.tmx"
     ],
+    "tileset.embedInMap": true,
     "tileset.lastUsedFilter": "File Tileset Tiled (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

@@ -90,7 +90,7 @@ namespace BillyPassepartout
 
             foreach (TmxObject obj in Map.ObjectsLayer.Objects)
             {
-                if (obj.Name == "Door")
+                if (obj.Name.Contains("Door"))
                 {
                     obj.OnDoorReached += DoorReached;
                     break;
@@ -102,9 +102,8 @@ namespace BillyPassepartout
         {
             foreach (TmxObject obj in Map.ObjectsLayer.Objects)
             {
-                if (obj.Name.Contains("Door"))
+                if (obj.Name == "Door")
                 {
-                    Key.OnKeyCollected -= KeyCollected;
                     Map.PathfindingMap.ToggleNode(obj.X, obj.Y, 2);
                     Key.IsActive = false;
                     IsKeyCollected = true;
@@ -115,8 +114,8 @@ namespace BillyPassepartout
 
         private void DoorReached(object sender)
         {
-            ((TmxObject)sender).OnDoorReached -= DoorReached;
             Game.OutdoorScene.PlayerStartingPos = new Vector2(5, 18);
+            Player.RigidBody.Velocity = Vector2.Zero;
             IsPlaying = false;
         }
     }

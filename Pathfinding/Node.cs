@@ -70,17 +70,23 @@ namespace BillyPassepartout
         {
             if (isDrawable)
             {
-                if (Cost == 1)
+                switch (Cost)
                 {
-                    sprite.DrawColor(new Vector4(0.0f, 1.0f, 0.0f, 0.4f));
-                }
-                else if (Cost == 2)
-                {
-                    sprite.DrawColor(new Vector4(0.0f, 0.0f, 1.0f, 0.4f));
-                }
-                else
-                {
-                    sprite.DrawColor(new Vector4(1.0f, 0.0f, 0.0f, 0.4f));
+                    case 1:
+                        sprite.DrawColor(new Vector4(0.0f, 1.0f, 0.0f, 0.4f));
+                        break;
+                    case 2:
+                        sprite.DrawColor(new Vector4(0.0f, 0.0f, 1.0f, 0.4f));
+                        break;
+                    case 3:
+                        sprite.DrawColor(new Vector4(0.729f, 0.698f, 0.090f, 0.4f));
+                        break;
+                    case 4:
+                        sprite.DrawColor(new Vector4(0.749f, 0.094f, 0.223f, 0.4f));
+                        break;
+                    default:
+                        sprite.DrawColor(new Vector4(1.0f, 0.0f, 0.0f, 0.4f));
+                        break;
                 }
             } 
         }

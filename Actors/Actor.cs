@@ -13,7 +13,7 @@ namespace BillyPassepartout
         public Actor(string textureName, float w = 0, float h = 0) : base(textureName, w:w, h:h)
         {
             RigidBody = new RigidBody(this);
-            Speed = 5.0f;
+            Speed = 15.0f;
         }
 
         public override void Draw()
