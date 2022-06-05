@@ -11,10 +11,6 @@ namespace BillyPassepartout
 {
     class TmxMap : IDrawable
     {
-        //TODO
-        //public delegate void DoorReachedEvent(object sender);
-        //public event DoorReachedEvent OnDoorReached;
-
         // Tileset
         private string tmxFilePath;
         private TmxTileset tileset;
@@ -101,12 +97,6 @@ namespace BillyPassepartout
         {
             return node.Attributes.GetNamedItem(attrName).Value;
         }
-
-        //TODO
-        /*public void OnDoor()
-        {
-
-        }*/
 
         public void Draw()
         {

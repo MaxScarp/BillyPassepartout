@@ -11,9 +11,6 @@ namespace BillyPassepartout
 {
     class HomeScene : Scene
     {
-        public Player Player { get; private set; }
-        public Key Key { get; private set; }
-
         public override void Start()
         {
             LoadAssets();
@@ -74,15 +71,22 @@ namespace BillyPassepartout
         private void LoadPlayer()
         {
             Player = new Player();
-            Player.Position = Game.ScreenCenter;
+            if(!IsKeyCollected)
+            {
+                PlayerStartingPos = Game.ScreenCenter;
+            }
+            Player.Position = PlayerStartingPos;
         }
 
         private void LoadObjects()
         {
-            Key = new Key();
-            Key.IsActive = true;
-            Key.Position = new Vector2(10, 2);
-            Key.OnKeyCollected += KeyCollected;
+            if(!IsKeyCollected)
+            {
+                Key = new Key();
+                Key.IsActive = true;
+                Key.Position = new Vector2(10, 2);
+                Key.OnKeyCollected += KeyCollected;
+            }
 
             foreach (TmxObject obj in Map.ObjectsLayer.Objects)
             {
@@ -103,6 +107,7 @@ namespace BillyPassepartout
                     Key.OnKeyCollected -= KeyCollected;
                     Map.PathfindingMap.ToggleNode(obj.X, obj.Y, 2);
                     Key.IsActive = false;
+                    IsKeyCollected = true;
                     break;
                 }
             }
@@ -111,6 +116,7 @@ namespace BillyPassepartout
         private void DoorReached(object sender)
         {
             ((TmxObject)sender).OnDoorReached -= DoorReached;
+            Game.OutdoorScene.PlayerStartingPos = new Vector2(5, 18);
             IsPlaying = false;
         }
     }

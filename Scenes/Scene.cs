@@ -1,4 +1,5 @@
 ﻿using Aiv.Fast2D;
+using OpenTK;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,13 @@ namespace BillyPassepartout
 {
     abstract class Scene
     {
-        public bool IsPlaying { get; protected set; }
+        public bool IsKeyCollected;
+        public Vector2 PlayerStartingPos;
+
         public TmxMap Map { get; protected set; }
+        public Player Player { get; protected set; }
+        public Key Key { get; protected set; }
+        public bool IsPlaying { get; protected set; }
 
         public Scene()
         {

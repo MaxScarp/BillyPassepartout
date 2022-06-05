@@ -11,8 +11,6 @@ namespace BillyPassepartout
 {
     class OutdoorScene : Scene
     {
-        public Player Player { get; private set; }
-
         public override void Start()
         {
             LoadAssets();
@@ -69,7 +67,7 @@ namespace BillyPassepartout
         private void LoadPlayer()
         {
             Player = new Player();
-            Player.Position = new Vector2(5, 18);
+            Player.Position = PlayerStartingPos;
         }
 
         private void LoadObjects()
@@ -102,6 +100,7 @@ namespace BillyPassepartout
                 case "WallDoor":
                     break;
                 case "HomeDoor":
+                    Game.HomeScene.PlayerStartingPos = new Vector2(27, 22);
                     SceneManager.LoadScene(0);
                     break;
                 case "LeftHouseDoor":

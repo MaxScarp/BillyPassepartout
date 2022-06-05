@@ -28,13 +28,13 @@ namespace BillyPassepartout
                 Weight = int.MaxValue;
             }
 
-            if(open)
-            {
-                Weight = 2;
-            }
-
             if(objName.Contains("Door"))
             {
+                if (open || SceneManager.CurrentScene.IsKeyCollected)
+                {
+                    Weight = 2;
+                }
+
                 RigidBody = new RigidBody(this);
                 RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
                 RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
