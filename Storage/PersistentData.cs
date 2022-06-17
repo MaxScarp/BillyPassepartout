@@ -14,6 +14,8 @@ namespace BillyPassepartout
         public static bool IsBlueKeyCollected;
         public static bool IsSkullKeyCollected;
 
+        public static int PlayerLives;
+
         public static void Init()
         {
             IsDungeonButtonPressed = false;
@@ -21,6 +23,8 @@ namespace BillyPassepartout
             IsRedKeyCollected = false;
             IsBlueKeyCollected = false;
             IsSkullKeyCollected = false;
+
+            PlayerLives = 3;
         }
     }
 }

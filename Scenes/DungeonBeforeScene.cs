@@ -88,6 +88,10 @@ namespace BillyPassepartout
                 {
                     obj.OnButtonReached += ButtonReached;
                 }
+                else if(obj.Name.Contains("Trap"))
+                {
+                    obj.OnTrapReached += TrapReached;
+                }
             }
         }
 
@@ -118,6 +122,18 @@ namespace BillyPassepartout
             Game.DungeonAfterScene.PlayerStartingPos = new Vector2(4, 6);
             Player.RigidBody.Velocity = Vector2.Zero;
             IsPlaying = false;
+        }
+
+        private void TrapReached(object sender)
+        {
+            Player.Lives--;
+            if(Player.Lives <= 0)
+            {
+                //SceneManager.LoadScene(5);
+                Console.WriteLine("GAME OVER!"); //TODO gameOverScene
+            }
+
+            Player.Agent.ResetPath();
         }
     }
 }

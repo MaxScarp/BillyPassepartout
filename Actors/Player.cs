@@ -11,6 +11,8 @@ namespace BillyPassepartout
     {
         private bool isMouseLeftClicked;
 
+        public int Lives { get { return PersistentData.PlayerLives; } set { PersistentData.PlayerLives = value; } }
+
         public Player() : base("dog", Game.PixelsToUnits(16), Game.PixelsToUnits(16))
         {
             AnimationStorage.LoadPlayerAnimations();
@@ -18,6 +20,7 @@ namespace BillyPassepartout
             RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
             RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
             RigidBody.Type = RigidBodyType.PLAYER;
+            RigidBody.AddCollisionType(RigidBodyType.TRAP);
 
             Animation = GfxManager.GetAnimation("idleD");
             Animation.Start();
@@ -85,6 +88,37 @@ namespace BillyPassepartout
             if (IsActive)
             {
                 base.Draw();
+            }
+        }
+
+        public override void OnCollide(Collision collisionInfo)
+        {
+            OnTrapCollides(collisionInfo);
+        }
+
+        public void OnTrapCollides(Collision collisionInfo)
+        {
+            if (collisionInfo.Delta.X < collisionInfo.Delta.Y)
+            {
+                // Horizontal Collision
+                if (X < collisionInfo.Collider.X)
+                {
+                    // Collision from Left (inverse horizontal delta)
+                    collisionInfo.Delta.X = -collisionInfo.Delta.X;
+                }
+
+                X += (int)collisionInfo.Delta.X;
+            }
+            else
+            {
+                // Vertical Collision
+                if (Y < collisionInfo.Collider.Y)
+                {
+                    // Collision from Top
+                    collisionInfo.Delta.Y = -collisionInfo.Delta.Y;
+                }
+
+                Y += (int)collisionInfo.Delta.Y;
             }
         }
     }
