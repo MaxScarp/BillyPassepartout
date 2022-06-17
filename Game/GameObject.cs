@@ -49,7 +49,7 @@ namespace BillyPassepartout
 
             Sprite = new Sprite(spriteW, spriteH);
 
-            Sprite.pivot = new Vector2(Game.PixelsToUnits(HalfWidth), Game.PixelsToUnits(HalfHeight));
+            //Sprite.pivot = new Vector2(Game.PixelsToUnits(HalfWidth), Game.PixelsToUnits(HalfHeight));
 
             Layer = layer;
 

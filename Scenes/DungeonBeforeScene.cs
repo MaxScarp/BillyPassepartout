@@ -45,6 +45,7 @@ namespace BillyPassepartout
         public override void Draw()
         {
             DrawManager.Draw();
+            DebugManager.Draw();
         }
 
         private void LoadAssets()

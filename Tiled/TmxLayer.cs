@@ -11,7 +11,6 @@ namespace BillyPassepartout
 {
     class TmxTileLayer
     {
-        private Texture tilesetImage;
         private Texture layerTexture;
         private Sprite layerSprite;
         public string[] IDs { get; }
@@ -24,8 +23,6 @@ namespace BillyPassepartout
 
             string[] Ids = csvData.Split(',');
             IDs = Ids;
-
-            tilesetImage = GfxManager.GetTexture(tileset.TextureName);
 
             // Create a single texture for the whole map
             layerTexture = new Texture(1024, 768);

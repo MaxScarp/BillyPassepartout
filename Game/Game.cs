@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aiv.Audio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,9 @@ namespace BillyPassepartout
         public static OutdoorScene OutdoorScene;
         public static DungeonBeforeScene DungeonBeforeScene;
         public static DungeonAfterScene DungeonAfterScene;
+        public static AudioSource BackgroundAudioSource;
+        public static AudioClip backgroundClip;
+
         public static float DeltaTime { get { return Window.DeltaTime; } }
 
         public static float UnitSize { get; private set; }
@@ -51,6 +55,10 @@ namespace BillyPassepartout
             OutdoorScene = new OutdoorScene();
             DungeonBeforeScene = new DungeonBeforeScene();
             DungeonAfterScene = new DungeonAfterScene();
+
+            BackgroundAudioSource = new AudioSource();
+            backgroundClip = new AudioClip("Assets/Audio/AdventureAudio.wav");
+            BackgroundAudioSource.Play(backgroundClip, true);
 
             PersistentData.Init();
 
