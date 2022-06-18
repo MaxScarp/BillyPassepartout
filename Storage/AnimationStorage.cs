@@ -13,38 +13,48 @@ namespace BillyPassepartout
     {
         private static int frameW = 16;
         private static int frameH = 16;
-        private static int fps = 15;
+        private static int fps = 7;
 
         public static void LoadPlayerAnimations()
         {
             //Dog Attack
-            GfxManager.AddAnimation("attackD", fps, 2, frameW, frameH, 1, 1);
-            GfxManager.AddAnimation("attackR", fps, 2, frameW, frameH, 1, 2);
-            GfxManager.AddAnimation("attackU", fps, 2, frameW, frameH, 1, 3);
+            GfxManager.AddAnimation("dogAttackD", fps, 2, frameW, frameH, 1, 1, false);
+            GfxManager.AddAnimation("dogAttackR", fps, 2, frameW, frameH, 1, 2, false);
+            GfxManager.AddAnimation("dogAttackU", fps, 2, frameW, frameH, 1, 3, false);
             //Dog Die                          
-            GfxManager.AddAnimation("die", fps, 2, frameW, frameH, 1, 4);
+            GfxManager.AddAnimation("dogDie", fps, 2, frameW, frameH, 1, 4, false);
             //Dog Hurt
-            GfxManager.AddAnimation("hurtD", fps, 1, frameW, frameH, 1, 5);
-            GfxManager.AddAnimation("hurtR", fps, 1, frameW, frameH, 1, 6);
-            GfxManager.AddAnimation("hurtU", fps, 1, frameW, frameH, 1, 7);
-            //Dog Roll
-            GfxManager.AddAnimation("rollD", fps, 3, frameW, frameH, 1, 8);
-            GfxManager.AddAnimation("rollR", fps, 3, frameW, frameH, 1, 9);
-            GfxManager.AddAnimation("rollU", fps, 3, frameW, frameH, 1, 10);
-            //Dog Push
-            GfxManager.AddAnimation("pushD", fps, 3, frameW, frameH, 1, 11);
-            GfxManager.AddAnimation("pushR", fps, 3, frameW, frameH, 1, 12);
-            GfxManager.AddAnimation("pushU", fps, 3, frameW, frameH, 1, 13);
-            //Dog Idle
-            GfxManager.AddAnimation("idleD", fps, 1, frameW, frameH, 1, 14);
-            GfxManager.AddAnimation("idleR", fps, 1, frameW, frameH, 1, 15);
-            GfxManager.AddAnimation("idleU", fps, 1, frameW, frameH, 1, 16);
+            GfxManager.AddAnimation("dogHurtD", fps, 1, frameW, frameH, 1, 5, false);
+            GfxManager.AddAnimation("dogHurtR", fps, 1, frameW, frameH, 1, 6, false);
+            GfxManager.AddAnimation("dogHurtU", fps, 1, frameW, frameH, 1, 7, false);
+            //Dog Roll               
+            GfxManager.AddAnimation("dogRollD", fps, 3, frameW, frameH, 1, 8, false);
+            GfxManager.AddAnimation("dogRollR", fps, 3, frameW, frameH, 1, 9, false);
+            GfxManager.AddAnimation("dogRollU", fps, 3, frameW, frameH, 1, 10, false);
+            //Dog Push               
+            GfxManager.AddAnimation("dogPushD", fps, 3, frameW, frameH, 1, 11, false);
+            GfxManager.AddAnimation("dogPushR", fps, 3, frameW, frameH, 1, 12, false);
+            GfxManager.AddAnimation("dogPushU", fps, 3, frameW, frameH, 1, 13, false);
+            //Dog Idle               
+            GfxManager.AddAnimation("dogIdleD", fps, 1, frameW, frameH, 1, 14);
+            GfxManager.AddAnimation("dogIdleR", fps, 1, frameW, frameH, 1, 15);
+            GfxManager.AddAnimation("dogIdleU", fps, 1, frameW, frameH, 1, 16);
             //Dog Walk                          
-            GfxManager.AddAnimation("walkD", fps, 4, frameW, frameH, 1, 17);
-            GfxManager.AddAnimation("walkR", fps, 4, frameW, frameH, 1, 18);
-            GfxManager.AddAnimation("walkU", fps, 4, frameW, frameH, 1, 19);
+            GfxManager.AddAnimation("dogWalkD", fps, 4, frameW, frameH, 1, 17);
+            GfxManager.AddAnimation("dogWalkR", fps, 4, frameW, frameH, 1, 18);
+            GfxManager.AddAnimation("dogWalkU", fps, 4, frameW, frameH, 1, 19);
         }
 
-        public static void LoadEnemyAnimations() { }
+        public static void LoadEnemyAnimations()
+        {
+            //Ghost Idle
+            GfxManager.AddAnimation("ghostIdleD", fps, 1, frameW, frameH, 1, 1);
+            //Ghost Walk
+            GfxManager.AddAnimation("ghostWalkR", fps, 4, frameW, frameH, 1, 2);
+            //Ghost Hurt
+            GfxManager.AddAnimation("ghostHurtR", fps, 1, frameW, frameH, 1, 3, false);
+            //Ghost Die
+            GfxManager.AddAnimation("ghostDie", fps, 2, frameW, frameH, 1, 4, false);
+        }
     }
 }

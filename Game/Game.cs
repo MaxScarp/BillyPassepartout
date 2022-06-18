@@ -57,7 +57,7 @@ namespace BillyPassepartout
             DungeonAfterScene = new DungeonAfterScene();
 
             BackgroundAudioSource = new AudioSource();
-            backgroundClip = new AudioClip("Assets/Sounds/Test.ogg");
+            backgroundClip = new AudioClip("Assets/Sounds/Background.ogg");
             BackgroundAudioSource.Play(backgroundClip, true);
 
             PersistentData.Init();

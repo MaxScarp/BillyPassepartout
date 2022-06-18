@@ -16,11 +16,14 @@ namespace BillyPassepartout
 
         public TmxMap Map { get; protected set; }
         public Player Player { get; protected set; }
+        public List<Enemy> Enemies { get; protected set; }
         public Key Key { get; protected set; }
         public bool IsPlaying { get; protected set; }
 
         public Scene()
         {
+            Enemies = new List<Enemy>();
+
             SceneManager.AddScene(this);
         }
 

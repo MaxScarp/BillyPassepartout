@@ -15,6 +15,7 @@ namespace BillyPassepartout
             LoadAudio();
             LoadMap();
             LoadPlayer();
+            LoadEnemies();
             LoadObjects();
 
             base.Start();
@@ -56,6 +57,9 @@ namespace BillyPassepartout
             //Player
             GfxManager.AddTexture("dog", "Assets/Hero/Dog.png");
 
+            //Enemy
+            GfxManager.AddTexture("ghost", "Assets/Enemy/Ghost.png");
+
             //Objects
             GfxManager.AddTexture("key", "Assets/Objects/SkullKey.png");
         }
@@ -71,6 +75,14 @@ namespace BillyPassepartout
         {
             Player = new Player();
             Player.Position = PlayerStartingPos;
+        }
+
+        private void LoadEnemies()
+        {
+            Enemy enemy = new Enemy();
+            enemy.Position = new Vector2(5, 6);
+
+            Enemies.Add(enemy);
         }
 
         private void LoadObjects()

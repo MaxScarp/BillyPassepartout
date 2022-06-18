@@ -22,12 +22,14 @@ namespace BillyPassepartout
             RigidBody.Type = RigidBodyType.PLAYER;
             RigidBody.AddCollisionType(RigidBodyType.TRAP);
 
-            Animation = GfxManager.GetAnimation("idleD");
+            Animation = GfxManager.GetAnimation("dogIdleD");
             Animation.Start();
 
             Agent = new Agent(this);
 
             isMouseLeftClicked = false;
+
+            Speed = 15.5f;
 
             IsActive = true;
         }
@@ -63,19 +65,19 @@ namespace BillyPassepartout
                     if(lastNode.X > (int)Position.X)
                     {
                         Sprite.FlipX = false;
-                        Animation = GfxManager.GetAnimation("walkR");
+                        Animation = GfxManager.GetAnimation("dogWalkR");
                     }
                     else
                     {
                         Sprite.FlipX = true;
-                        Animation = GfxManager.GetAnimation("walkR");
+                        Animation = GfxManager.GetAnimation("dogWalkR");
                     }
                 }
                 else
                 {
                     if(RigidBody.Velocity == Vector2.Zero)
                     {
-                        Animation = GfxManager.GetAnimation("idleD");
+                        Animation = GfxManager.GetAnimation("dogIdleD");
                     }
                 }
 
