@@ -12,6 +12,7 @@ namespace BillyPassepartout
         public delegate void OnSomethingReachedEvent(object sender);
         public event OnSomethingReachedEvent OnDoorReached;
         public event OnSomethingReachedEvent OnButtonReached;
+        public event OnSomethingReachedEvent OnTrapReached;
 
         private int xOff, yOff;
 
@@ -36,11 +37,7 @@ namespace BillyPassepartout
                     Weight = 2;
                 }
 
-                RigidBody = new RigidBody(this);
-                RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
-                RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
-                RigidBody.Type = RigidBodyType.DOOR;
-                RigidBody.AddCollisionType(RigidBodyType.PLAYER);
+                CreateCollider(RigidBodyType.DOOR, RigidBodyType.PLAYER);
             }
 
             if(objName.Contains("Button"))
@@ -48,18 +45,12 @@ namespace BillyPassepartout
                 if(!pressed)
                 {
                     Weight =  3;
-
-                    RigidBody = new RigidBody(this);
-                    RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
-                    RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
-                    RigidBody.Type = RigidBodyType.BUTTON;
-                    RigidBody.AddCollisionType(RigidBodyType.PLAYER);
+                    CreateCollider(RigidBodyType.BUTTON, RigidBodyType.PLAYER);
                 }
                 else
                 {
                     Weight = 1;
                 }
-                
             }
 
             if (objName.Contains("Trap"))
@@ -69,12 +60,7 @@ namespace BillyPassepartout
                 if(active)
                 {
                     Weight = 4;
-
-                    RigidBody = new RigidBody(this);
-                    RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
-                    RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
-                    RigidBody.Type = RigidBodyType.TRAP;
-                    RigidBody.AddCollisionType(RigidBodyType.PLAYER);
+                    CreateCollider(RigidBodyType.TRAP, RigidBodyType.PLAYER);
                 }
                 else
                 {
@@ -95,13 +81,17 @@ namespace BillyPassepartout
 
         public override void OnCollide(Collision collisionInfo)
         {
-            if(RigidBody.Type == RigidBodyType.DOOR)
+            switch (RigidBody.Type)
             {
-                DoorReached();
-            }
-            else if(RigidBody.Type == RigidBodyType.BUTTON)
-            {
-                ButtonReached();
+                case RigidBodyType.DOOR:
+                    DoorReached();
+                    break;
+                case RigidBodyType.BUTTON:
+                    ButtonReached();
+                    break;
+                case RigidBodyType.TRAP:
+                    TrapReached();
+                    break;
             }
         }
 
@@ -119,6 +109,23 @@ namespace BillyPassepartout
             {
                 OnButtonReached(this);
             }
+        }
+
+        private void TrapReached()
+        {
+            if(OnTrapReached != null)
+            {
+                OnTrapReached(this);
+            }
+        }
+
+        private void CreateCollider(RigidBodyType rType, RigidBodyType rCollidesWithType)
+        {
+            RigidBody = new RigidBody(this);
+            RigidBody.Collider = ColliderFactory.CreateBoxFor(this, Game.PixelsToUnits(12), Game.PixelsToUnits(12));
+            RigidBody.Collider.Offset = new Vector2(0.3f, 0.3f);
+            RigidBody.Type = rType;
+            RigidBody.AddCollisionType(rCollidesWithType);
         }
     }
 }
