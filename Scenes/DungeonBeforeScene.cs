@@ -1,4 +1,5 @@
-﻿using OpenTK;
+﻿using Aiv.Audio;
+using OpenTK;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,8 @@ namespace BillyPassepartout
 {
     class DungeonBeforeScene : Scene
     {
+        private AudioSource buttonAudioSource;
+
         public override void Start()
         {
             LoadAssets();
@@ -26,6 +29,7 @@ namespace BillyPassepartout
             Map = null;
             Player = null;
             Key = null;
+            Sword = null;
             base.OnExit();
         }
 
@@ -46,7 +50,6 @@ namespace BillyPassepartout
         public override void Draw()
         {
             DrawManager.Draw();
-            DebugManager.Draw();
         }
 
         private void LoadAssets()
@@ -62,9 +65,16 @@ namespace BillyPassepartout
 
             //Objects
             GfxManager.AddTexture("key", "Assets/Objects/SkullKey.png");
+            GfxManager.AddTexture("sword", "Assets/Objects/Sword.png");
         }
 
-        private void LoadAudio() { }
+        private void LoadAudio()
+        {
+            buttonAudioSource = new AudioSource();
+            AudioManager.AddClip("buttonPressed", "Assets/Sounds/ButtonPressed.ogg");
+            AudioManager.AddClip("swordCollected", "Assets/Sounds/SwordReached.ogg");
+            AudioManager.AddClip("rotatingSword", "Assets/Sounds/SwordThrow.ogg");
+        }
 
         private void LoadMap()
         {
@@ -79,10 +89,13 @@ namespace BillyPassepartout
 
         private void LoadEnemies()
         {
-            Enemy enemy = new Enemy();
-            enemy.Position = new Vector2(5, 6);
+            if(!PersistentData.IsWallKeyCollected)
+            {
+                Enemy enemy = new Enemy();
+                enemy.Position = new Vector2(5, 6);
 
-            Enemies.Add(enemy);
+                Enemies.Add(enemy);
+            }
         }
 
         private void LoadObjects()
@@ -90,6 +103,14 @@ namespace BillyPassepartout
             Key = new Key();
             Key.IsActive = true;
             Key.Position = new Vector2(18, 14);
+
+            if(!PersistentData.IsSwordCollected)
+            {
+                Sword = new Sword();
+                Sword.IsActive = true;
+                Sword.Position = new Vector2(8, 16);
+                Sword.OnSwordCollected += SwordCollected;
+            }
 
             foreach (TmxObject obj in Map.ObjectsLayer.Objects)
             {
@@ -106,6 +127,13 @@ namespace BillyPassepartout
                     obj.OnTrapReached += TrapReached;
                 }
             }
+        }
+
+        private void SwordCollected(object sender)
+        {
+            Sword.AudioSource.Play(AudioManager.GetClip("swordCollected"));
+            Sword.IsActive = false;
+            PersistentData.IsSwordCollected = true;
         }
 
         private void DoorReached(object sender)
@@ -131,6 +159,7 @@ namespace BillyPassepartout
 
         private void ButtonReached(object sender)
         {
+            buttonAudioSource.Play(AudioManager.GetClip("buttonPressed"));
             PersistentData.IsDungeonButtonPressed = true;
             Game.DungeonAfterScene.PlayerStartingPos = new Vector2(4, 6);
             Player.RigidBody.Velocity = Vector2.Zero;
@@ -140,12 +169,6 @@ namespace BillyPassepartout
         private void TrapReached(object sender)
         {
             Player.Lives--;
-            if(Player.Lives <= 0)
-            {
-                //SceneManager.LoadScene(5);
-                Console.WriteLine("GAME OVER!"); //TODO gameOverScene
-            }
-
             Player.Agent.ResetPath();
         }
     }

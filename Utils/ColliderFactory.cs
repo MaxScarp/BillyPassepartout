@@ -31,6 +31,11 @@ namespace BillyPassepartout
             return new CircleCollider(obj.RigidBody, radius);
         }
 
+        public static CircleCollider CreateCircleFor(GameObject obj, float radius)
+        {
+            return new CircleCollider(obj.RigidBody, radius);
+        }
+
         public static BoxCollider CreateBoxFor(GameObject obj)
         {
             return new BoxCollider(obj.RigidBody, obj.HalfWidth * 2, obj.HalfHeight * 2);

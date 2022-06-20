@@ -124,18 +124,6 @@ namespace BillyPassepartout
             return Nodes[y * width + x];
         }
 
-        public Node GetRandomNode()
-        {
-            Node randomNode = null;
-
-            do
-            {
-                randomNode = Nodes[RandomGenerator.GetRandomInt(0, Nodes.Count())];
-            } while (randomNode.Cost == int.MaxValue);
-
-            return randomNode;
-        } //TODO
-
         public void ToggleNode(int x, int y, int cost = 1)
         {
             Node node = GetNode(x, y);

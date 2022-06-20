@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aiv.Audio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +11,12 @@ namespace BillyPassepartout
     class Player : Actor
     {
         private bool isMouseLeftClicked;
+        private bool isMouseRightClicked;
+        private bool isDead;
 
         public int Lives { get { return PersistentData.PlayerLives; } set { PersistentData.PlayerLives = value; } }
+        public AudioSource StepsSource { get; private set; }
+        public AudioSource GeneralSource { get; private set; }
 
         public Player() : base("dog", Game.PixelsToUnits(16), Game.PixelsToUnits(16))
         {
@@ -29,14 +34,23 @@ namespace BillyPassepartout
 
             isMouseLeftClicked = false;
 
-            Speed = 15.5f;
+            Speed = 3.5f;
 
+            StepsSource = new AudioSource();
+            StepsSource.Volume = 1.5f;
+            GeneralSource = new AudioSource();
+            AudioManager.AddClip("steps", "Assets/Sounds/Steps.ogg");
+            AudioManager.AddClip("hurt", "Assets/Sounds/PlayerHurt.ogg");
+            AudioManager.AddClip("dogDie", "Assets/Sounds/PlayerDeath.ogg");
+            AudioManager.AddClip("swordThrow", "Assets/Sounds/SwordThrow.ogg");
+
+            isDead = false;
             IsActive = true;
         }
 
         public void Input()
         {
-            if (IsActive)
+            if (IsActive && !isDead)
             {
                 if (Game.Window.MouseLeft)
                 {
@@ -52,13 +66,55 @@ namespace BillyPassepartout
                 {
                     isMouseLeftClicked = false;
                 }
+
+                if (Game.Window.MouseRight)
+                {
+                    if (!isMouseRightClicked && PersistentData.IsSwordCollected)
+                    {
+                        isMouseRightClicked = true;
+
+                        Sword sword = new Sword();
+                        sword.Position = Position;
+                        sword.IsActive = true;
+                        sword.AudioSource.Play(AudioManager.GetClip("rotatingSword"), true);
+
+                        Vector2 dir = (Game.MousePos - Position).Normalized();
+                        sword.RigidBody.Velocity = dir * Game.DeltaTime * sword.Speed;
+                    }
+                }
+                else if (isMouseRightClicked)
+                {
+                    isMouseRightClicked = false;
+                }
             }
         }
 
         public override void Update()
         {
-            if (IsActive)
+            if (IsActive && !isDead)
             {
+                if(RigidBody.Velocity != Vector2.Zero)
+                {
+                    if(!StepsSource.IsPlaying)
+                    {
+                        StepsSource.Play(AudioManager.GetClip("steps"));
+                    }
+                }
+                else
+                {
+                    StepsSource.Stop();
+                }
+
+                if(Lives <= 0)
+                {
+                    isDead = true;
+                    Agent.ResetPath();
+                    GeneralSource.Play(AudioManager.GetClip("dogDie"));
+                    Animation = GfxManager.GetAnimation("dogDie");
+
+                    Console.WriteLine("GAME OVER!");
+                }
+
                 Node lastNode = Agent.GetLastNode();
                 if(lastNode != null)
                 {
@@ -100,6 +156,11 @@ namespace BillyPassepartout
 
         public void OnTrapCollides(Collision collisionInfo)
         {
+            Console.WriteLine(Lives);
+
+            StepsSource.Stop();
+            GeneralSource.Play(AudioManager.GetClip("hurt"));
+
             if (collisionInfo.Delta.X < collisionInfo.Delta.Y)
             {
                 // Horizontal Collision

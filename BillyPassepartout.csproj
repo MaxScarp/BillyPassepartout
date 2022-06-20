@@ -65,6 +65,7 @@
     <Compile Include="Components\RandomizeSoundEmitter.cs" />
     <Compile Include="Components\SoundEmitter.cs" />
     <Compile Include="Game\Key.cs" />
+    <Compile Include="Game\Sword.cs" />
     <Compile Include="Pathfinding\Agent.cs" />
     <Compile Include="Pathfinding\Map.cs" />
     <Compile Include="Pathfinding\Node.cs" />
@@ -101,10 +102,8 @@
     <Compile Include="Physics\RigidBody.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenes\GameOverScene.cs" />
     <Compile Include="Scenes\HomeScene.cs" />
     <Compile Include="Scenes\Scene.cs" />
-    <Compile Include="Scenes\TitleScene.cs" />
     <Compile Include="Utils\RandomGenerator.cs" />
     <Compile Include="Tiled\TmxLayer.cs" />
     <Compile Include="Tiled\TmxMap.cs" />
@@ -136,7 +135,7 @@
     <Content Include="Assets\Sounds\Background.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Assets\Sounds\Button.ogg">
+    <Content Include="Assets\Sounds\ButtonPressed.ogg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Sounds\DoorUnlocked.ogg">

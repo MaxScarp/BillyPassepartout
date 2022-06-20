@@ -7,7 +7,7 @@ using OpenTK;
 
 namespace BillyPassepartout
 {
-    enum RigidBodyType { PLAYER = 1, KEY = 2, DOOR = 4, BUTTON = 8, TRAP = 16, ENEMY = 32 }
+    enum RigidBodyType { PLAYER = 1, KEY = 2, DOOR = 4, BUTTON = 8, TRAP = 16, ENEMY = 32, SWORD = 64 }
 
     class RigidBody
     {
@@ -47,11 +47,6 @@ namespace BillyPassepartout
         public void AddCollisionType(RigidBodyType type)
         {
             collisionMask |= (uint)type;
-        }
-
-        public void AddCollisionType(uint type)
-        {
-            collisionMask |= type;
         }
 
         public bool CollisionTypeMatches(RigidBodyType type)

@@ -13,6 +13,7 @@ namespace BillyPassepartout
         public static bool IsRedKeyCollected;
         public static bool IsBlueKeyCollected;
         public static bool IsSkullKeyCollected;
+        public static bool IsSwordCollected;
 
         public static int PlayerLives;
 
@@ -23,6 +24,7 @@ namespace BillyPassepartout
             IsRedKeyCollected = false;
             IsBlueKeyCollected = false;
             IsSkullKeyCollected = false;
+            IsSwordCollected = false;
 
             PlayerLives = 3;
         }

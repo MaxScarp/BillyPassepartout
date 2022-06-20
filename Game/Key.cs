@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aiv.Audio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,8 @@ namespace BillyPassepartout
         public delegate void KeyCollectedEvent(object sender);
         public event KeyCollectedEvent OnKeyCollected;
 
+        public AudioSource AudioSource { get; private set; }
+
         public Key() : base("key", DrawLayer.FOREGROUND)
         {
             RigidBody = new RigidBody(this);
@@ -20,7 +23,7 @@ namespace BillyPassepartout
             RigidBody.Type = RigidBodyType.KEY;
             RigidBody.AddCollisionType(RigidBodyType.PLAYER);
 
-            IsActive = true;
+            AudioSource = new AudioSource();
         }
 
         public override void OnCollide(Collision collisionInfo)

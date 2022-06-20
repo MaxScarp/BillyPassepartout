@@ -12,12 +12,14 @@ namespace BillyPassepartout
     abstract class Scene
     {
         public bool IsKeyCollected;
+        public bool IsSwordCollected;
         public Vector2 PlayerStartingPos;
 
         public TmxMap Map { get; protected set; }
         public Player Player { get; protected set; }
         public List<Enemy> Enemies { get; protected set; }
         public Key Key { get; protected set; }
+        public Sword Sword { get; protected set; }
         public bool IsPlaying { get; protected set; }
 
         public Scene()
@@ -50,7 +52,7 @@ namespace BillyPassepartout
         public abstract void Update();
         public abstract void Draw();
 
-        protected void Quit()
+        public void Quit()
         {
             if (Game.Window.GetKey(KeyCode.Esc))
             {

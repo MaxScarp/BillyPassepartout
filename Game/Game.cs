@@ -58,6 +58,7 @@ namespace BillyPassepartout
 
             BackgroundAudioSource = new AudioSource();
             backgroundClip = new AudioClip("Assets/Sounds/Background.ogg");
+            BackgroundAudioSource.Volume = 0.35f;
             BackgroundAudioSource.Play(backgroundClip, true);
 
             PersistentData.Init();
@@ -74,9 +75,6 @@ namespace BillyPassepartout
         {
             while (Window.IsOpened)
             {
-                // Show FPS on Window Title Bar
-                Window.SetTitle($"FPS: {1f / Window.DeltaTime}"); //DEBUG
-
                 // INPUT
                 SceneManager.CurrentScene.Input();
 

@@ -23,6 +23,7 @@ namespace BillyPassepartout
         public float HalfHeight { get { return Sprite.Height * 0.5f; } }
         public float Width { get { return Sprite.Width; } }
         public float Height { get { return Sprite.Height; } }
+        public bool IsOutOfScreen { get { return CalculateOutOfScreen(); } }
 
         public Vector2 Forward
         { 
@@ -76,6 +77,11 @@ namespace BillyPassepartout
 
             UpdateManager.RemoveItem(this);
             DrawManager.RemoveItem(this);
+        }
+
+        private bool CalculateOutOfScreen()
+        {
+            return X < 0 || X >= Game.Window.OrthoWidth || Y < 0 || Y >= Game.Window.OrthoHeight;
         }
     }
 }

@@ -55,9 +55,15 @@ namespace BillyPassepartout
 
             //Player
             GfxManager.AddTexture("dog", "Assets/Hero/Dog.png");
+
+            //Objects
+            GfxManager.AddTexture("sword", "Assets/Objects/Sword.png");
         }
 
-        private void LoadAudio() { }
+        private void LoadAudio()
+        {
+            AudioManager.AddClip("rotatingSword", "Assets/Sounds/SwordThrow.ogg");
+        }
 
         private void LoadMap()
         {

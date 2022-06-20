@@ -59,9 +59,14 @@ namespace BillyPassepartout
 
             //Objects
             GfxManager.AddTexture("key", "Assets/Objects/Key.png");
+            GfxManager.AddTexture("sword", "Assets/Objects/Sword.png");
         }
 
-        private void LoadAudio() { }
+        private void LoadAudio()
+        {
+            AudioManager.AddClip("doorUnlocked", "Assets/Sounds/DoorUnlocked.ogg");
+            AudioManager.AddClip("rotatingSword", "Assets/Sounds/SwordThrow.ogg");
+        }
 
         private void LoadMap()
         {
@@ -100,6 +105,8 @@ namespace BillyPassepartout
 
         private void KeyCollected(object sender)
         {
+            Key.AudioSource.Play(AudioManager.GetClip("doorUnlocked"));
+
             foreach (TmxObject obj in Map.ObjectsLayer.Objects)
             {
                 if (obj.Name == "Door")
